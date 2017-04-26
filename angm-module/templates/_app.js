@@ -21,7 +21,7 @@
 		<% } if (angularBootstrap) { %>'ngTouch',
 		<% } if (angularSanitize) { %>'ngSanitize',
 		<% } %>'ui.router',
-		'home',<% _.each(arrayModules, function(module) { %>
+		'dashboard',<% _.each(arrayModules, function(module) { %>
 		'<%= module.name %>',<% }); %>
 	]);
 

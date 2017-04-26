@@ -35,7 +35,7 @@ var ModuleGenerator = generators.Base.extend({
 
     var prompts = [{
       name: 'moduleName',
-      message: 'What would you like to call the module?',
+      message: 'Hola, What would you like to call the module?',
       default: 'module name must be here'
     }];
 
@@ -226,7 +226,9 @@ var ModuleGenerator = generators.Base.extend({
       this.fs.copyTpl(
 
       this.templatePath('_navService.js'),
-      this.destinationPath('app/modules/layouts/side-nav/sidenavService.js'),
+      //this.destinationPath('app/modules/layouts/side-nav/sidenavService.js'),
+      //created by yash
+      this.destinationPath('app/modules/dashboard/sidenav/sidenavService.js'),
       {
         arrayMenu: this.config.get('menu'),
         nameApp: this.config.get('appName'),
@@ -240,13 +242,14 @@ var ModuleGenerator = generators.Base.extend({
     this.fs.copyTpl(
 
       this.templatePath('_navService.js'),
-      this.destinationPath('app/modules/layouts/nav-bar/navBarService.js'),
+      //this.destinationPath('app/modules/layouts/nav-bar/navBarService.js'),
+      //created by yash
+      this.destinationPath('app/modules/dashboard/sidenav/sidenavService.js'),
       {
         arrayMenu: this.config.get('menu'),
         nameApp: this.config.get('appName'),
         _: _,
         slugifiedName: this.slugifiedName
-
       }
     );
 

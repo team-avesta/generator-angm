@@ -1,0 +1,22 @@
+<md-list ng-controller="SidenavCtrl as vm" ng-cloak>
+  <md-list-item ui-sref="dashboard.home">
+    <div class="inset">
+      <ng-md-icon icon="apps"></ng-md-icon>
+    </div>
+    <p> Dashboard </p>
+  </md-list-item>
+  <md-list-item ng-repeat="item in vm.menu" ng-click="vm.navigateTo('dashboard.' + item.link)">
+    <div class="inset" ng-show="item.icon">
+      <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+    </div>
+    <p> {{ item.name }}</p>
+  </md-list-item>
+  <md-divider></md-divider>
+  <md-subheader>Admin</md-subheader>
+  <md-list-item ng-repeat="item in vm.admin" ng-click="vm.showSettingsBottom($event)">
+    <div class="inset">
+      <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
+    </div>
+    <p> {{ item.title }}</p>
+  </md-list-item>
+</md-list>

@@ -26,7 +26,7 @@
 
 		<% if (angularMaterial) { %>
 		$urlRouterProvider
-			.otherwise('/dashboard');
+			.otherwise('/home');
 		<% } else { %>
 		$urlRouterProvider
 			.otherwise('/');

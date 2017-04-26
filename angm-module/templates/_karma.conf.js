@@ -27,11 +27,11 @@ module.exports = function (config) {
 			'src/bower_components/angular-messages/angular-messages.js',
 			'src/bower_components/angular-material-icons/angular-material-icons.js',<% } %>
 			'app/app.js',
-			'app/modules/home/homeModule.js',
-			'app/modules/home/homeCtrl.js',
-			'app/modules/home/homeRoute.js',
-			'app/modules/home/homeService.js',
-			'app/modules/home/home-test.js',<% _.each(arrayModules, function(module) { %>
+			'app/modules/dashboard/dashboardModule.js',
+			'app/modules/dashboard/dashboardCtrl.js',
+			'app/modules/dashboard/dashboardRoute.js',
+			'app/modules/dashboard/dashboardService.js',
+			'app/modules/dashboard/dashboard-test.js',<% _.each(arrayModules, function(module) { %>
 			'app/modules/<%= module.name %>/<%= module.name %>Module.js',
 			'app/modules/<%= module.name %>/<%= module.name %>Ctrl.js',
 			'app/modules/<%= module.name %>/<%= module.name %>Route.js',

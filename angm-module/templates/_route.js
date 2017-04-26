@@ -12,7 +12,7 @@ angular.module('<%= slugifiedName %>')
 	.config(['$stateProvider', function ($stateProvider) {
 		<% if (angularMaterial) { %>
 		$stateProvider
-			.state('home.<%= slugifiedName %>', {
+			.state('dashboard.<%= slugifiedName %>', {
 				url:'/<%= slugifiedName %>',
 				templateUrl: 'app/modules/<%= slugifiedName %>/<%= slugifiedName %>.html',
 				controller: '<%= slugifiedNameCapitalize %>Ctrl',

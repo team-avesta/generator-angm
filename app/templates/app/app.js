@@ -22,7 +22,7 @@
 		<% } if (angularBootstrap) { %>'ngTouch',
 		<% } if (angularSanitize) { %>'ngSanitize',
 		<% } %>'ui.router',
-		'home',
+		'dashboard',
 	]);
 
 })();

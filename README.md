@@ -235,7 +235,7 @@ Code:
 		'ngAnimate',
 		'ngSanitize',
 		'ui.router',
-		'home',
+		'dashboard',
 	]);
 
 })();

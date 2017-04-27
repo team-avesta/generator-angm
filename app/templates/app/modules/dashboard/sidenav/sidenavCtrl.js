@@ -40,8 +40,6 @@
 		// Only use $scope in controllerAs when necessary; for example, publishing and subscribing events using $emit, $broadcast, $on or $watch.
 		$scope.$on('$stateChangeSuccess', vm.closeSidenav);
 
-		vm.menu = MenuService.listMenu();
-
 		vm.admin = [
 			{
 				link: 'showListBottomSheet($event)',

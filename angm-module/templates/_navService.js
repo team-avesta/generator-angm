@@ -19,20 +19,7 @@
 
 		function Menu ($http) {
 
-			var menu = [
-				<% _.each(arrayMenu, function(menu) { %>
-					{
-						link: '<%= menu.link %>',
-							name: '<%= menu.title %>'
-					},
-			    <% }); %>
-		  	];
-
-			return {
-				listMenu: function () {
-					return menu;
-				}
-		  	}
+			return {};
 
 		}
 

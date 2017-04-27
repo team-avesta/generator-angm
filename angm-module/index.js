@@ -230,7 +230,7 @@ var ModuleGenerator = generators.Base.extend({
       //created by yash
       this.destinationPath('app/modules/dashboard/sidenav/sidenavService.js'),
       {
-        arrayMenu: this.config.get('menu'),
+        //arrayMenu: this.config.get('menu'),
         nameApp: this.config.get('appName'),
         _: _,
         slugifiedName: this.slugifiedName
@@ -246,7 +246,7 @@ var ModuleGenerator = generators.Base.extend({
       //created by yash
       this.destinationPath('app/modules/dashboard/sidenav/sidenavService.js'),
       {
-        arrayMenu: this.config.get('menu'),
+        //arrayMenu: this.config.get('menu'),
         nameApp: this.config.get('appName'),
         _: _,
         slugifiedName: this.slugifiedName

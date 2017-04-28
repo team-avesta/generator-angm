@@ -197,7 +197,7 @@ var AngmGenerator = generators.Base.extend({
     // Copy project hidden files
     this.copy('bowerrc', '.bowerrc');
     this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
+    this.copy('eslintrc', '.eslintrc');
   },
 
   createApplicationTemplateFiles: function() {

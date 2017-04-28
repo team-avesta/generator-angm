@@ -11,13 +11,10 @@
 	angular
 		.module('<%= slugifiedAppName %>')
 		.controller('SidenavCtrl', SidenavCtrl)
-		.controller('SettingsCtrl', SettingsCtrl);
 
 	// Injecting Denpendencies
 
 	SidenavCtrl.$inject = ['$mdSidenav', '$state', '$mdBottomSheet', '$mdToast', 'MenuService', '$scope'];
-	SettingsCtrl.$inject = ['$mdBottomSheet'];
-
 	/*
 	* recommend
 	* Using function declarations
@@ -70,23 +67,6 @@
 			});
 		};
 
-	}
-
-	function SettingsCtrl($mdBottomSheet) {
-		/*jshint validthis: true */
-		var vm = this;
-
-		vm.items = [
-			{name: 'Roles', icon: 'assignment_ind'},
-			{name: 'Notes', icon: 'speaker_notes'},
-			{name: 'Tasks', icon: 'view_list'},
-			{name: 'Inbox', icon: 'inbox'}
-		];
-
-		vm.listItemClick = function ($index) {
-			var clickedItem = vm.items[$index];
-			$mdBottomSheet.hide(clickedItem);
-		};
 	}
 
 })();

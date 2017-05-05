@@ -107,7 +107,7 @@ var AngmGenerator = generators.Base.extend({
       }, {
         value: 'angularMaterial',
         name: 'Angular Material',
-        checked: false
+        checked: true
       }]
     }];
 
@@ -198,6 +198,7 @@ var AngmGenerator = generators.Base.extend({
     this.copy('bowerrc', '.bowerrc');
     this.copy('editorconfig', '.editorconfig');
     this.copy('eslintrc', '.eslintrc');
+    this.copy('tern-project', '.tern-project');
   },
 
   createApplicationTemplateFiles: function() {

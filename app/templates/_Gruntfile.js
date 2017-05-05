@@ -24,6 +24,18 @@ module.exports = function(grunt) {
       bowerInstaller: 'bower-installer'
     },
 
+    sass: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'assets/sass/',
+          src: ['*.scss'],
+          dest: '.tmp',
+          ext: '.css'
+        }]
+      }
+    },
+
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -40,16 +52,16 @@ module.exports = function(grunt) {
           'app/modules/**/*Service.js',
           'app/modules/**/*Directive.js'
         ],
-        dest: 'app/assets/js/<%= pkg.name %>-appbundle.js'
+        dest: 'assets/js/<%= pkg.name %>-appbundle.js'
       },
       build: {
         src: [
           // Angular Project Dependencies,
-          'app/assets/libs/angular/angular.js',
-          'app/assets/libs/**/*.js'
+          'assets/libs/angular/angular.js',
+          'assets/libs/**/*.js'
 
         ],
-        dest: 'app/assets/js/<%= pkg.name %>-angularbundle.js'
+        dest: 'assets/js/<%= pkg.name %>-angularbundle.js'
       }
     },
 
@@ -60,11 +72,11 @@ module.exports = function(grunt) {
       },
       base: {
         src: ['<%= concat.base.dest %>'],
-        dest: 'app/assets/js/<%= pkg.name %>-angscript.min.js'
+        dest: 'assets/js/<%= pkg.name %>-angscript.min.js'
       },
       basePlugin: {
         src: ['src/plugins/**/*.js'],
-        dest: 'app/assets/js/plugins/',
+        dest: 'assets/js/plugins/',
         expand: true,
         flatten: true,
         ext: '.min.js'
@@ -92,12 +104,22 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      options: {
+        livereload: true,
+      },
       app: {
         files: '<%= eslint.target %>',
         tasks: ['eslint'],
         options: {
           livereload: true
         }
+      },
+      sass: {
+        options: {
+          livereload: true
+        },
+        files: ['assets/sass/*.scss'],
+        tasks: ['sass']
       }
     },
 
@@ -120,8 +142,8 @@ module.exports = function(grunt) {
       production: {
         files: {
           'index.html': [
-            'app/assets/css/**/*.css',
-            'app/assets/js/*.js'
+            'assets/css/**/*.css',
+            'assets/js/*.js'
           ]
 
         }
@@ -131,7 +153,7 @@ module.exports = function(grunt) {
     ngtemplates: {
       app: {
         src: 'app/modules/**/*.html',
-        dest: 'app/assets/js/templates.js',
+        dest: 'assets/js/templates.js',
         options: {
           module: '<%= pkg.name %>',
           root: 'app/',

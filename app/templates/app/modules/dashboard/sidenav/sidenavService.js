@@ -1,25 +1,25 @@
-(function() {
-    'use strict';
+(function () {
+	'use strict';
 
-    /**
-     * @ngdoc function
-     * @name app.service:menuService
-     * @description
-     * # menuService
-     * Service of the app
-     */
+	angular
+		.module('dashboard')
+		.factory('MenuService', Menu);
 
-    angular
-        .module('<%= slugifiedAppName %>')
-        .factory('MenuService', Menu);
+	Menu.$inject = ['$http'];
 
-    // Inject your dependencies as .$inject = ['$http', '$otherDependency'];
-    // function Name ($http, $otherDependency) {...}
+	function Menu($http) {
 
-    Menu.$inject = ['$http'];
+		var menu = [{
+			link: '.',
+			name: 'This is a Placeholder menu. It disappears when the first module has been created.'
+		}];
 
-    function Menu($http) {
-        // Sample code.
-        return {};
-    }
+		return {
+			listMenu: function () {
+				return menu;
+			}
+		};
+
+	}
+
 })();

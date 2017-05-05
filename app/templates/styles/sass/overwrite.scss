@@ -1,0 +1,271 @@
+ @import "variable";
+ body,
+ md-button,
+ md-checkbox,
+ md-progress-circular,
+ md-progress-linear,
+ md-radio-button,
+ md-slider,
+ md-switch,
+ md-tabs,
+ md-text-float,
+ md-toolbar {
+   color: $asbestos;
+ }
+
+ .dialog-content {
+    padding: 8px !important;
+}
+
+
+ .md-list-item-text {
+   width: 97.5%;
+ }
+ /* It will override useragent style sheet of <p> */
+ /* p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+} */
+
+ .no-webkit-mar {
+   -webkit-margin-before: 0em !important;
+   -webkit-margin-after: 0em !important;
+ }
+
+ .webkit-mar05 {
+   -webkit-margin-before: 0.5em !important;
+   -webkit-margin-after: 0.5em !important;
+ }
+ /* sidebar menu */
+
+ a.md-button:not([disabled]):hover {
+   .menu-text {
+     color: $asbestos;
+   }
+   i {
+     color: $asbestos;
+   }
+ }
+
+ body {
+   font-family: robotoregular;
+   color: $smokyblack;
+ }
+
+ md-input-container {
+   height: 30px;
+ }
+
+ md-grid-list md-grid-tile md-grid-tile-header {
+   background: rgba(0, 0, 0, 0.40) !important;
+ }
+
+ .counselingdate {
+   .md-datepicker-input-container {
+     width: 80%;
+   }
+ }
+
+ .menu-end-border > md-list-item > button > a {
+   min-height: 48px !important;
+ }
+
+ .menu-end-border > md-list-item .md-no-style {
+   padding: 0 !important;
+ }
+
+ .s-googlemenu md-toolbar:not(.md-menu-toolbar) .md-button:not(.md-raised) {
+   background: transparent !important;
+ }
+
+ .flex-table-header {
+   color: rgba(0, 0, 0, 0.54);
+   font-size: 14px;
+   //font-weight: bold;
+   font-weight: normal;
+   white-space: nowrap;
+ }
+
+ .action-btn-table {
+   text-align: left !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   font-size: 12px !important;
+   &:hover {
+     background-color: transparent !important;
+   }
+ }
+
+ #mymodule > md-select-value > span {
+   font-weight: normal !important;
+ }
+
+ md-menu-bar md-menu.md-open > .notify-button {
+   outline: none;
+   background: transparent !important;
+ }
+
+ .faculty-joining-datepicker > .md-datepicker-input-container > .md-datepicker-input {
+   min-width: 140px !important;
+ }
+
+ md-chips .md-chips {
+   margin-bottom: 8px;
+ }
+
+ .md-chips {
+   padding: 0px !important;
+ }
+
+ md-autocomplete > md-autocomplete-wrap > md-input-container > input {
+   color: $smokyblack !important;
+   &:not(:focus) {
+     color: $smokyblack !important;
+   }
+ }
+
+ table.md-table {
+   background: $peace;
+ }
+
+ md-content {
+   background: $peace;
+ }
+ /* tab scroll issue */
+ /*  md-tab-content > div {
+     width: 100%;
+     height: 100%;
+ } */
+ /* md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    min-height: 100% !important;
+} */
+
+ md-tabs.stretch-height md-tab-content>div {
+   margin: 0;
+   width: 100%;
+   min-height: 100%;
+   height: 100%;
+ }
+ /* Capitalize every text input */
+
+ input[type="text"] {
+   text-transform: capitalize !important;
+ }
+
+ input[type="email"] {
+   text-transform: lowercase !important;
+ }
+
+ textarea[type="text"] {
+   text-transform: capitalize !important;
+ }
+
+ input {
+   text-transform: capitalize !important;
+ }
+
+ textarea {
+   text-transform: capitalize !important;
+ }
+
+ td {
+   text-transform: capitalize !important;
+ }
+
+ md-list {
+   text-transform: capitalize !important;
+ }
+
+ md-option {
+   text-transform: capitalize !important;
+ }
+
+ md-select {
+   text-transform: capitalize !important;
+ }
+
+ md-datepicker > .md-datepicker-input-container > input.md-input {
+   pointer-events: none;
+ }
+ /* Shree hack */
+
+ strong {
+   font-family: robotobold;
+   font-weight: normal !important;
+ }
+
+ table.md-table th.md-column {
+   color: rgba(0, 0, 0, 0.54);
+   font-size: 12px;
+   font-weight: normal !important;
+   white-space: nowrap;
+ }
+
+ table.md-table th.md-column {
+   font-size: 14px !important;
+   font-family: robotobold;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   font-family: robotobold !important;
+ }
+
+ input[type=number]::-webkit-outer-spin-button,
+ input[type=number]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+
+ input[type=number] {
+   -moz-appearance: textfield;
+ }
+
+ md-progress-linear {
+   .md-container {
+     height: 25px;
+     .md-bar {
+       height: 25px;
+     }
+   }
+ }
+
+
+/* file input directive which are used in imports */
+
+ .lf-ng-md-file-input-button {
+   background-color: $accent_dark !important;
+ }
+
+.lf-ng-md-file-input-button-remove {
+  background-color: $peace !important;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #607D8B;
+}

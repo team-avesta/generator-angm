@@ -1,14 +1,6 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name app.route:DashboardRoute
- * @description
- * # DashboardRoute
- * Route of the app
- */
-
-angular.module('<%= slugifiedAppName %>')
+angular.module('dashboard')
   .config(['$stateProvider', function($stateProvider) {
     $stateProvider
       <% if (angularMaterial) { %>

@@ -1,28 +1,13 @@
 (function () {
 	'use strict';
 
-	/**
-	* @ngdoc function
-	* @name app.controller:SidenavCtrl
-	* @description
-	* # SidenavCtrl
-	* Controller of the app
-	*/
-	angular
-		.module('<%= slugifiedAppName %>')
+		angular
+		.module('dashboard')
 		.controller('SidenavCtrl', SidenavCtrl)
 
-	// Injecting Denpendencies
-
 	SidenavCtrl.$inject = ['$mdSidenav', '$state', '$mdBottomSheet', '$mdToast', 'MenuService', '$scope'];
-	/*
-	* recommend
-	* Using function declarations
-	* and bindable members up top.
-	*/
 
 	function SidenavCtrl($mdSidenav, $state, $mdBottomSheet, $mdToast, MenuService, $scope) {
-		/*jshint validthis: true */
 		var vm = this;
 
 		vm.toggleSidenav = function (menuId) {
@@ -33,9 +18,9 @@
 			$mdSidenav('left').close();
 		};
 
-		// Close menu on small screen after click on menu item.
-		// Only use $scope in controllerAs when necessary; for example, publishing and subscribing events using $emit, $broadcast, $on or $watch.
 		$scope.$on('$stateChangeSuccess', vm.closeSidenav);
+
+		vm.menu = MenuService.listMenu();
 
 		vm.admin = [
 			{
@@ -67,6 +52,22 @@
 			});
 		};
 
+	}
+
+	function SettingsCtrl($mdBottomSheet) {
+		var vm = this;
+
+		vm.items = [
+			{name: 'Roles', icon: 'assignment_ind'},
+			{name: 'Notes', icon: 'speaker_notes'},
+			{name: 'Tasks', icon: 'view_list'},
+			{name: 'Inbox', icon: 'inbox'}
+		];
+
+		vm.listItemClick = function ($index) {
+			var clickedItem = vm.items[$index];
+			$mdBottomSheet.hide(clickedItem);
+		};
 	}
 
 })();

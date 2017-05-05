@@ -22,6 +22,7 @@
 		<% } if (angularBootstrap) { %>'ngTouch',
 		<% } if (angularSanitize) { %>'ngSanitize',
 		<% } %>'ui.router',
+		'shared',
 		'dashboard',
 	]);
 

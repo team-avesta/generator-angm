@@ -1,0 +1,119 @@
+@import "variable";
+.verified-text,
+.active-text,
+.passgreen {
+  color: $fern !important;
+  text-transform: uppercase !important;
+}
+
+.awaiting-text,
+.excarrot {
+  color: $carrot !important;
+  text-transform: uppercase !important;
+}
+
+.not-verified-text,
+.inactive-text,
+.pending-text,
+.failred {
+  color: $blush !important;
+  text-transform: uppercase !important;
+}
+
+.grid-btn {
+  width: 75px !important;
+  height: 75px !important;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 5;
+}
+
+.calllist-checkbox {
+  color: $peace;
+  margin-bottom: 0 !important;
+  .md-icon {
+    border-color: $peace !important;
+  }
+}
+
+.del-icon-btn {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 44px !important;
+}
+
+.rightalignicons {
+  text-align: right !important;
+}
+
+
+/* filters */
+
+.filter-container {
+  background: $peace;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  box-shadow: 0px 5px 2px -3px rgba(0, 0, 0, 0.2);
+  transition: height 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 0;
+  visibility: hidden;
+  padding: 16px;
+  box-sizing: border-box;
+  height: 100%
+}
+
+.filter-open {
+  height: auto !important;
+  visibility: visible !important;
+  top: 48px;
+}
+
+.grid-action-text-button {
+  font-size: 12px !important;
+  margin: 0 !important;
+}
+
+.list-hover {
+  border-bottom: 1px solid $asbestos;
+  &:first-child {
+    border-top: 1px solid $asbestos;
+  }
+  &:last-child {
+    border-bottom: 1px solid $asbestos;
+  }
+  &:hover {
+    background-color: $offwhite;
+  }
+}
+
+.terms-list {
+  &:first-child {
+    background-color: $offwhite;
+  }
+}
+
+.programme-list {
+  &:first-child {
+    background-color: $offwhite;
+  }
+}
+
+.faculty-list {
+  &:first-child {
+    background-color: $offwhite;
+  }
+}
+
+.selected-list {
+  &:first-child {
+    background-color: $offwhite;
+  }
+}
+
+.examsession-date {
+  .md-datepicker-input-container {
+    width: 50%;
+  }
+}

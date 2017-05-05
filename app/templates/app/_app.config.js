@@ -1,16 +1,7 @@
 (function () {
 	'use strict';
 
-	/**
-	 * @ngdoc configuration file
-	 * @name app.config:config
-	 * @description
-	 * # Config and run block
-	 * Configutation of the app
-	 */
-
-
-	angular
+	 angular // eslint-disable-line angular/component-limit
 		.module('<%= slugifiedAppName %>')
 		.config(configure)
 		.run(runBlock);

@@ -1,0 +1,11 @@
+ @import "variable";
+
+ .instruction-container {
+   background: $peace;
+   height: 100vh;
+   width: 450px;
+   position: fixed;
+   top: 0px;
+   z-index: 1;
+   transition: 0.3s;
+ }

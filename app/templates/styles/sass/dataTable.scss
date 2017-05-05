@@ -1,0 +1,206 @@
+@import "variable";
+.grid {
+  .grid-title {
+    font-size: 19px;
+  }
+  .grid-subtitle {
+    font-size: 16px;
+  }
+  .font-400 {
+    font-weight: 400;
+  }
+  .font-600 {
+    font-family: robotobold;
+  }
+  .grid-tagline {
+    font-size: 14px;
+    padding: 0 8px;
+    color: $dull;
+    font-family: robotomedium;
+  }
+}
+
+.pagination-counter {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: normal !important;
+}
+
+.inactive-page-direction {
+  color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.active-page-direction {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+md-icon.inactive-page-direction {
+  svg {
+    fill: rgba(0, 0, 0, 0.26) !important;
+  }
+}
+
+md-icon.active-page-direction {
+  svg {
+    fill: rgba(0, 0, 0, 0.54) !important;
+  }
+}
+
+.table-header {
+  color: grey;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.marks-input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.row-hover {
+  &:hover {
+    background-color: $cloud;
+    cursor: pointer;
+  }
+}
+
+.selected-row {
+  background-color: $cloud !important;
+}
+
+.city-select {
+  &:hover {
+    background-color: $cloud;
+    cursor: pointer;
+  }
+}
+
+
+/* Report table */
+
+.mark-sheet-edit-header {
+  border: solid 1px lightgray;
+  min-height: 37px;
+  .mark-sheet-edit-header-td {
+    border-right: solid 1px lightgray;
+    text-align: center;
+    word-wrap: break-word;
+    font-family: robotomedium;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px 0;
+    .f-small {
+      font-size: 12px;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .mark-sheet-edit-td {
+    border-right: solid 1px lightgray;
+    font-size: 12px;
+    text-align: center;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  .students-name {
+    display: block;
+    text-align: left !important;
+    padding-left: 16px !important;
+    margin: 0 !important;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+  .student-entry {
+    justify-content: flex-start !important;
+    position: relative;
+    left: 16px;
+    right: 16px;
+    text-align: left;
+  }
+  .content-center {
+    display: block;
+    margin: 0 !important;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+  .status-report {
+    border-right: none;
+  }
+}
+
+.border-top-none {
+  border-top: none !important;
+}
+
+.min-w-150 {
+  min-width: 150px;
+  margin-top: 48px;
+}
+
+.mark-container {
+  border: none;
+  border-bottom: solid 1px lightgray;
+  width: 85%;
+  padding-top: 5px;
+  font-size: 12px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.focus-entry {
+  &:focus {
+    font-family: robotobold;
+  }
+}
+
+.name-container {
+  border: none;
+  border-bottom: solid 1px lightgray;
+  width: 85%;
+  padding-top: 5px;
+  font-size: 12px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.content-center {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.mark-verification-edit-header {
+  border: solid 1px lightgray;
+  border-right: none;
+  .mark-verification-edit-header-td {
+    border-right: solid 1px lightgray;
+    text-align: center;
+    .f-small {
+      font-size: 10px;
+    }
+  }
+  .mark-verification-edit-td {
+    border-right: solid 1px lightgray;
+    font-size: 12px;
+    //padding: 14px 0 0 5px;
+    //padding: 0 0 0 5px;
+  }
+}
+
+.highlight {
+  font-family: robotobold;
+}

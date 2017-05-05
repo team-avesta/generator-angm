@@ -1,15 +1,7 @@
 (function () {
 	'use strict';
 
-	/**
-	* @ngdoc function
-	* @name app.service:dashboardService
-	* @description
-	* # dashboardService
-	* Service of the app
-	*/
-
-	angular.module('<%= slugifiedAppName %>')
+	angular.module('dashboard')
 		.factory('dashboardService', dashboardService);
 
 	dashboardService.$inject = ['$http'];

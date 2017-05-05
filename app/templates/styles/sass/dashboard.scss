@@ -1,0 +1,163 @@
+@import 'variable';
+
+.main-container {
+   background: $peace;
+   width: 100%;
+   height: 100%;
+   //margin: 20px 0;
+   position: relative;
+   .menu-content {
+      width: inherit;
+      height: 45%;
+      .menu-block {
+         margin: 1em 0px;
+      }
+   }
+}
+
+.zoom {
+   cursor: pointer;
+   transition: 0.3s;
+   .material-icons {
+      transition: 0.3s;
+      margin: 0px 0 10px 0;
+   }
+   .dashboard-icon {
+      color: $concrete;
+      width: 48px;
+      height: 48px;
+   }
+   .menu-btn-text {
+      transition: 0.3s;
+      color: $concrete;
+   }
+   &:hover {
+      .material-icons {
+         transform: scale(1.25);
+      }
+      .menu-btn-text {
+         color: $accent_dark;
+      }
+      .dashboard-icon {
+         color: $accent_dark;
+      }
+   }
+}
+
+.menu-btn-text {
+   margin: 16px 0;
+   text-align: center;
+}
+
+.document-block-container {
+  border: 1px solid $dull;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+.document-btn-container {
+   width: 157px;
+   height: 36px;
+   overflow: hidden;
+   background-color: $accent_dark;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+   border-radius: 3px;
+   cursor: pointer !important;
+   position: relative;
+   .document-text {
+      position: absolute;
+      left: 14px;
+      top: 9px;
+      color: $peace;
+      cursor: pointer;
+   }
+   .upload-photo-btn {
+    left: 28px !important;
+   }
+   .document-input {
+      display: block !important;
+      width: inherit !important;
+      height: inherit !important;
+      opacity: 0 !important;
+      overflow: hidden !important;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+   shadow: none;
+   &:focus {
+      outline: none;
+   }
+}
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+}
+
+body,
+md-content.md-blue-grey-theme {
+    background-color: #eee;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+    fill: #fff;
+}
+
+md-sidenav {
+    fill: #737373;
+}
+
+.user-avatar {
+    border-radius: 99%;
+}
+
+md-toolbar.md-tall {
+    height: 64px;
+    max-height: 64px;
+    min-height: 64px;
+}
+
+code {
+    color: #4285f4;
+    -webkit-font-smoothing: auto;
+    font-weight: 300;
+    background-color: #F2F2F2;
+    padding: 10px;
+}
+
+.text-center {
+    text-align: center!important
+}
+
+ul {
+    list-style: none
+}
+
+.sidebar-container {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    background-color: white;
+}
+
+.sidebar-initial-width {
+    max-width: 100px !important;
+}
+
+.sidebar-final-width {
+    max-width: 235px;
+}
+
+.m8 {
+    margin: 8px;
+}
+
+.whitebg {
+    background-color: white;
+}

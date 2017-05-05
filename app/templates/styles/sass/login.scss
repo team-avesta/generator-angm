@@ -1,0 +1,42 @@
+@import "variable";
+.login {
+    background-image: url(../../images/loginbg.png);
+    height: 100%;
+    width: 100%;
+    .login-container {
+        width: 650px;
+    }
+    .login-title {
+        text-align: center;
+        color: $concrete;
+        font-size: 2em;
+    }
+}
+
+.registration {
+    background-image: url(../../images/loginbg.png);
+    height: 100%;
+    width: 100%;
+    .registration-container {
+        width: 960px;
+    }
+    .registration-title {
+        text-align: center;
+        color: $concrete;
+        font-size: 2em;
+    }
+}
+
+.contact-container {
+    width: 650px;
+    padding: 16px;
+    box-sizing: border-box;
+    .contact-text {
+        font-family: robotoregular;
+        font-size: 12px;
+        color: #777777;
+        letter-spacing: 0.05em;
+    }
+}
+
+

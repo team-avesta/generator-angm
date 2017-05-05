@@ -1,19 +1,11 @@
 (function () {
 	'use strict';
 
-	/**
-	* @ngdoc function
-	* @name app.test:dashboardTest
-	* @description
-	* # dashboardTest
-	* Test of the app
-	*/
-
 	describe('dashboardCtrl', function () {
 		var controller = null, $scope = null, $location;
 
 		beforeEach(function () {
-			module('<%= slugifiedAppName %>');
+			module('dashboard');
 		});
 
 		beforeEach(inject(function ($controller, $rootScope, _$location_) {

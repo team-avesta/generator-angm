@@ -131,18 +131,27 @@ var AngmGenerator = generators.Base.extend({
   createApplicationScaffold: function() {
     // Create public folders
     //mkdirp('app/modules/home');
-   	//mkdirp('app/modules/layouts');
+    //mkdirp('app/modules/layouts');
     // Created by Yash
     mkdirp('app');
     mkdirp('app/modules/dashboard');
     mkdirp('app/modules/dashboard/header');
     mkdirp('app/modules/dashboard/sidenav');
-    mkdirp('app/assets/images');
-    mkdirp('app/assets/fonts');
-    mkdirp('app/assets/css');
+    mkdirp('assets/images');
+    mkdirp('assets/fonts');
+    mkdirp('assets/fonts/materialicon');
+    mkdirp('assets/fonts/roboto');
+    mkdirp('assets/sass');
     mkdirp('src/bower_components');
     mkdirp('src/plugins');
     mkdirp('app/modules/shared');
+    mkdirp('app/modules/shared/services');
+    mkdirp('app/modules/shared/constants');
+    mkdirp('app/modules/shared/directives');
+    mkdirp('app/modules/shared/directives/focusMe');
+    mkdirp('app/modules/shared/directives/inputLimit');
+    mkdirp('app/modules/shared/directives/loadingSpinner');
+
     //Copy home folder content
     this.copy('app/app.js');
     if (this.angularMaterial == true) {
@@ -187,6 +196,69 @@ var AngmGenerator = generators.Base.extend({
       this.copy('app/modules/layouts/nav-bar/navbarService.js');
     }
 
+    // Copy shared modules file
+    // services
+    this.copy('app/modules/shared/sharedModule.js');
+    this.copy('app/modules/shared/services/baseDataService.js');
+    this.copy('app/modules/shared/services/dialogService.js');
+    this.copy('app/modules/shared/services/errorService.js');
+    this.copy('app/modules/shared/services/exceptionHandlerService.js');
+    this.copy('app/modules/shared/services/fileReaderService.js');
+    this.copy('app/modules/shared/services/modelTransformerService.js');
+    this.copy('app/modules/shared/services/pubSubService.js');
+    this.copy('app/modules/shared/services/toastService.js');
+    this.copy('app/modules/shared/services/dateConvertService.js');
+    // constants
+    this.copy('app/modules/shared/constants/eventsConstantService.js');
+    // directives
+    this.copy('app/modules/shared/directives/focusMe/focusMe.js');
+    this.copy('app/modules/shared/directives/inputLimit/inputLimit.js');
+    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinner.js');
+    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinnerDialog.js');
+    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinner.html');
+
+    //Copy fonts file
+    this.copy('styles/fonts/materialicon/MaterialIcons-Regular.eot', 'assets/fonts/materialicon/MaterialIcons-Regular.eot');
+    this.copy('styles/fonts/materialicon/MaterialIcons-Regular.ttf', 'assets/fonts/materialicon/MaterialIcons-Regular.ttf');
+    this.copy('styles/fonts/materialicon/MaterialIcons-Regular.woff', 'assets/fonts/materialicon/MaterialIcons-Regular.woff');
+    this.copy('styles/fonts/materialicon/MaterialIcons-Regular.woff2', 'assets/fonts/materialicon/MaterialIcons-Regular.woff2');
+    this.copy('styles/fonts/roboto/Roboto-Bold.eot', 'assets/fonts/roboto/Roboto-Bold.eot');
+    this.copy('styles/fonts/roboto/Roboto-Bold.ttf', 'assets/fonts/roboto/Roboto-Bold.ttf');
+    this.copy('styles/fonts/roboto/Roboto-Bold.woff', 'assets/fonts/roboto/Roboto-Bold.woff');
+    this.copy('styles/fonts/roboto/Roboto-Bold.woff2', 'assets/fonts/roboto/Roboto-Bold.woff2');
+    this.copy('styles/fonts/roboto/Roboto-Light.eot', 'assets/fonts/roboto/Roboto-Light.eot');
+    this.copy('styles/fonts/roboto/Roboto-Light.ttf', 'assets/fonts/roboto/Roboto-Light.ttf');
+    this.copy('styles/fonts/roboto/Roboto-Light.woff', 'assets/fonts/roboto/Roboto-Light.woff');
+    this.copy('styles/fonts/roboto/Roboto-Light.woff2', 'assets/fonts/roboto/Roboto-Light.woff2');
+    this.copy('styles/fonts/roboto/Roboto-LightItalic.eot', 'assets/fonts/roboto/Roboto-LightItalic.eot');
+    this.copy('styles/fonts/roboto/Roboto-LightItalic.ttf', 'assets/fonts/roboto/Roboto-LightItalic.ttf');
+    this.copy('styles/fonts/roboto/Roboto-LightItalic.woff', 'assets/fonts/roboto/Roboto-LightItalic.woff');
+    this.copy('styles/fonts/roboto/Roboto-Medium.eot', 'assets/fonts/roboto/Roboto-Medium.eot');
+    this.copy('styles/fonts/roboto/Roboto-Medium.ttf', 'assets/fonts/roboto/Roboto-Medium.ttf');
+    this.copy('styles/fonts/roboto/Roboto-Medium.woff', 'assets/fonts/roboto/Roboto-Medium.woff');
+    this.copy('styles/fonts/roboto/Roboto-Medium.woff2', 'assets/fonts/roboto/Roboto-Medium.woff2');
+    this.copy('styles/fonts/roboto/Roboto-Regular.eot', 'assets/fonts/roboto/Roboto-Regular.eot');
+    this.copy('styles/fonts/roboto/Roboto-Regular.ttf', 'assets/fonts/roboto/Roboto-Regular.ttf');
+    this.copy('styles/fonts/roboto/Roboto-Regular.woff', 'assets/fonts/roboto/Roboto-Regular.woff');
+    this.copy('styles/fonts/roboto/Roboto-Regular.woff2', 'assets/fonts/roboto/Roboto-Regular.woff2');
+
+    // Copy Sass files
+    this.copy('styles/sass/accordian.scss', 'assets/sass/accordian.scss');
+    this.copy('styles/sass/application.scss', 'assets/sass/application.scss');
+    this.copy('styles/sass/container.scss', 'assets/sass/container.scss');
+    this.copy('styles/sass/dataTable.scss', 'assets/sass/dataTable.scss');
+    this.copy('styles/sass/font-icon.scss', 'assets/sass/font-icon.scss');
+    this.copy('styles/sass/form.scss', 'assets/sass/form.scss');
+    this.copy('styles/sass/grid.scss', 'assets/sass/grid.scss');
+    this.copy('styles/sass/header.scss', 'assets/sass/header.scss');
+    this.copy('styles/sass/helper.scss', 'assets/sass/helper.scss');
+    this.copy('styles/sass/loadingSpinner.scss', 'assets/sass/loadingSpinner.scss');
+    this.copy('styles/sass/login.scss', 'assets/sass/login.scss');
+    this.copy('styles/sass/overwrite.scss', 'assets/sass/overwrite.scss');
+    this.copy('styles/sass/sidebar.scss', 'assets/sass/sidebar.scss');
+    this.copy('styles/sass/stepper.scss', 'assets/sass/stepper.scss');
+    this.copy('styles/sass/typography.scss', 'assets/sass/typography.scss');
+    this.copy('styles/sass/variable.scss', 'assets/sass/variable.scss');
 
     // Copy project files
     //this.copy('Gruntfile.js');

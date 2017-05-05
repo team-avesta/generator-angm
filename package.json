@@ -39,6 +39,7 @@
     "async": "~0.9.0",
     "fs-extra": "~0.10.0",
     "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
     "mocha": "*",
     "temp": "~0.8.0",
     "yeoman-assert": "^2.1.1",

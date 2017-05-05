@@ -1,0 +1,199 @@
+@import "variable";
+
+/* Rules for sizing the icon. */
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.md-delete {
+    color: $pomegrante;
+}
+
+.material-icons.md-confirm {
+    color: $emerland;
+}
+
+.material-icons.md-warning {
+    color: $carrot;
+}
+
+.material-icons.md-edit {
+    color: $avesta;
+}
+
+.material-icons.md-form {
+    color: $iris;
+}
+
+.material-icons.md-pearly {
+    color: $concrete;
+}
+
+.material-icons.md-accent {
+    color: $accent_dark;
+}
+
+.material-icons.md-primary {
+    color: $primary;
+}
+
+.material-icons.md-peace {
+    color: $peace;
+}
+
+.material-icons.md-concrete {
+    color: $concrete !important;
+}
+
+
+/* Rules for using icons as black on a light background. */
+
+.material-icons.md-dark {
+    //color: $md-dark;
+    color: $concrete;
+}
+
+.material-icons.md-dark.md-inactive {
+    color: $md-dark-inactive;
+}
+
+
+/* Rules for using icons as white on a dark background. */
+
+.material-icons.md-light {
+    color: $md-light;
+}
+
+.material-icons.md-light.md-inactive {
+    color: $md-light-inactive;
+}
+
+
+/* rules for svg icons */
+
+md-icon.md-alert {
+    svg {
+        fill: $pomegrante;
+    }
+}
+
+md-icon.md-confirm {
+    svg {
+        fill: $emerland;
+    }
+}
+
+md-icon.md-warning {
+    svg {
+        fill: $carrot;
+    }
+}
+
+md-icon.md-wait {
+    svg {
+        fill: $sea;
+    }
+}
+
+md-icon.md-asbestos {
+    svg {
+        fill: $asbestos;
+    }
+}
+
+md-icon.md-end {
+    svg {
+        fill: $choclate;
+    }
+}
+
+md-icon.md-form {
+    svg {
+        fill: $iris;
+    }
+}
+
+md-icon.md-start {
+    svg {
+        fill: $turquoise;
+    }
+}
+
+md-icon.md-pearly {
+    svg {
+        fill: $concrete;
+    }
+}
+
+md-icon.md-accent {
+    svg {
+        fill: $carrot;
+    }
+}
+
+
+/* Rules for using icons as black on a light backgroundmd-icon. */
+
+md-icon.md-dark {
+    svg {
+        fill: $md-dark;
+    }
+}
+
+md-icon.md-dark-inactive {
+    svg {
+        fill: $md-dark-inactive;
+    }
+}
+
+
+/* Rules for using icons as white on a dark background. */
+
+md-icon.md-light {
+    svg {
+        fill: $md-light;
+    }
+}
+
+md-icon.md-light-inactive {
+    svg {
+        fill: $md-light-inactive;
+    }
+}
+
+
+md-icon.md-accent {
+  svg{
+    fill: $carrot;
+  }
+}
+
+md-icon.md-primary {
+  svg{
+    fill: $indigo;
+  }
+}
+
+md-icon.md-disabled {
+    svg {
+        fill: $disabled;
+    }
+}
+
+.md-svg-18 {
+    width: 18px !important;
+    height: 18px !important;
+}

@@ -3,11 +3,11 @@
 
 		angular
 		.module('dashboard')
-		.controller('SidenavCtrl', SidenavCtrl)
+		.controller('sidenavCtrl', controller)
 
-	SidenavCtrl.$inject = ['$mdSidenav', '$state', '$mdBottomSheet', '$mdToast', 'MenuService', '$scope'];
+	controller.$inject = ['$mdSidenav', '$state', '$mdBottomSheet', '$mdToast', 'MenuService', '$scope'];
 
-	function SidenavCtrl($mdSidenav, $state, $mdBottomSheet, $mdToast, MenuService, $scope) {
+	function controller($mdSidenav, $state, $mdBottomSheet, $mdToast, MenuService, $scope) {
 		var vm = this;
 
 		vm.toggleSidenav = function (menuId) {
@@ -19,8 +19,6 @@
 		};
 
 		$scope.$on('$stateChangeSuccess', vm.closeSidenav);
-
-		vm.menu = MenuService.listMenu();
 
 		vm.admin = [
 			{

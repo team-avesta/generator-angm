@@ -1,24 +1,20 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	/**
-	 * @ngdoc function
-	 * @name app.service:<%= slugifiedName %>Service
-	 * @description
-	 * # <%= slugifiedName %>Service
-	 * Service of the app
-	 */
+    angular
+        .module('<%= slugifiedName %>')
+        .factory('<%= slugifiedNameCapitalize %>Service', service);
 
-  	angular
-		.module('<%= slugifiedName %>')
-		.factory('<%= slugifiedNameCapitalize %>Service', <%= slugifiedNameCapitalize %>);
-		// Inject your dependencies as .$inject = ['$http', 'someSevide'];
-		// function Name ($http, someSevide) {...}
+    service.$inject = ['$http'];
 
-		<%= slugifiedNameCapitalize %>.$inject = ['$http'];
+    function service($http) {
+        var service = {};
 
-		function <%= slugifiedNameCapitalize %> ($http) {
+        return service {
 
-		}
+        };
 
+        ////////////
+        ///start writing function implementations below
+    }
 })();

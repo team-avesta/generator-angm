@@ -2,11 +2,11 @@
     'use strict';
     angular
         .module('shared')
-        .config(exceptionConfig);
+        .config(service);
 
-    exceptionConfig.$inject = ['$provide'];
+    service.$inject = ['$provide'];
 
-    function exceptionConfig($provide) {
+    function service($provide) {
         $provide.decorator('$exceptionHandler', extendExceptionHandler);
     }
 

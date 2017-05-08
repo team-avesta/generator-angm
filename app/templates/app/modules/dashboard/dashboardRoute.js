@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('dashboard')
-        .config(Dashboard);
+        .config(route);
 
-    Dashboard.$inject = ['$stateProvider'];
+    route.$inject = ['$stateProvider'];
 
-    function Dashboard($stateProvider) {
+    function route($stateProvider) {
         $stateProvider
             <% if (angularMaterial) { %>
             .state('dashboard', {

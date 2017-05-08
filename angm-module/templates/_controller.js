@@ -1,30 +1,23 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	/**
-	* @ngdoc function
-	* @name app.controller:<%= slugifiedName %>Ctrl
-	* @description
-	* # <%= slugifiedName %>Ctrl
-	* Controller of the app
-	*/
+    angular
+        .module('<%= slugifiedName %>')
+        .controller('<%= slugifiedNameCapitalize %>Ctrl', controller);
 
-  	angular
-		.module('<%= slugifiedName %>')
-		.controller('<%= slugifiedNameCapitalize %>Ctrl', <%= slugifiedNameCapitalize %>);
+    controller.$inject = [];
 
-		<%= slugifiedNameCapitalize %>.$inject = [];
+    function controller() {
+        var vm = this;
 
-		/*
-		* recommend
-		* Using function declarations
-		* and bindable members up top.
-		*/
+        //variables
 
-		function <%= slugifiedNameCapitalize %>() {
-			/*jshint validthis: true */
-			var vm = this;
+        //core
 
-		}
+        //helpers
+
+        ////////////
+        ///start writing function implementations below
+    }
 
 })();

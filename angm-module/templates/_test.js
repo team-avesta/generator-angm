@@ -1,14 +1,6 @@
 (function () {
 	'use strict';
 
-	/**
-	 * @ngdoc function
-	 * @name app.test:<%= slugifiedName %>Test
-	 * @description
-	 * # <%= slugifiedName %>Test
-	 * Test of the app
-	 */
-
 	describe('<%= slugifiedName %> test', function () {
 		var controller = null, $scope = null;
 

@@ -1,9 +1,9 @@
 (function() {
     'use strict';
     angular.module('shared')
-        .factory('dialogService', dialogService);
+        .factory('dialogService', service);
 
-    function dialogService($mdDialog, pubSubService, events, $document) {
+    function service($mdDialog, pubSubService, events, $document) {
         var messageText = '';
         var displayType = 'popup';
 

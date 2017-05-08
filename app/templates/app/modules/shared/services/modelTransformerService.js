@@ -1,9 +1,9 @@
 angular
     .module('shared')
-    .factory('modelTransformerService', modelTransformerService)
+    .factory('modelTransformerService', service)
 
 
-function modelTransformerService() {
+function service() {
 
     var modelTransformer = {
         transform: transformResult,

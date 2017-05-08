@@ -124,7 +124,9 @@ module.exports = function(grunt) {
     },
 
     injector: {
-      options: {},
+      options: {
+      	addRootSlash: false
+      },
       dev: {
         files: {
           'index.html': [

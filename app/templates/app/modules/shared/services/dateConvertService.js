@@ -2,9 +2,9 @@
     'use strict';
     angular
         .module('shared')
-        .factory('dateConvertService', dateConvertService);
+        .factory('dateConvertService', service);
 
-    function dateConvertService() {
+    function service() {
 
         var service = {
             convert: convert

@@ -3,9 +3,9 @@
 
     angular
         .module('shared')
-        .factory('fileReaderService', fileReaderService);
+        .factory('fileReaderService', service);
 
-    function fileReaderService($q, $log) {
+    function service($q, $log) {
 
         return {
             //readAsDataUrl: readAsDataURL

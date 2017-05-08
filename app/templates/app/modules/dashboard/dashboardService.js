@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular.module('dashboard')
-		.factory('dashboardService', dashboardService);
+		.factory('dashboardService', service);
 
-	dashboardService.$inject = ['$http'];
+	service.$inject = ['$http'];
 
-	function dashboardService($http) {
+	function service($http) {
 
 		var list = [
 			{"feature": "Implemented Best Practices, following: John Papa's Guide"},

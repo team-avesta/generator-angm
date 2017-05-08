@@ -1,9 +1,9 @@
 (function() {
     'use strict';
     angular.module('shared')
-        .factory('pubSubService', pubSubService);
+        .factory('pubSubService', service);
 
-    function pubSubService() {
+    function service() {
         var cache = {};
 
         var service = {

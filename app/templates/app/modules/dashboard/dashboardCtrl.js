@@ -3,11 +3,11 @@
 
 	angular
 		.module('dashboard')
-		.controller('DashboardCtrl', Home);
+		.controller('DashboardCtrl', controller);
 
-	Home.$inject = ['dashboardService'];
+	controller.$inject = ['dashboardService'];
 
-	function Home(dashboardService) {
+	function controller(dashboardService) {
 		var vm = this;
 		vm.title = "Hello, dashboard!";
 		vm.version = "1.0.0";

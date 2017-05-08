@@ -1,8 +1,8 @@
 (function() {
     'use strict';
-    angular.module('shared').factory('baseDataService', baseDataService);
+    angular.module('shared').factory('baseDataService', service);
 
-    function baseDataService($http, config, $q, PubSubService, events) {
+    function service($http, config, $q, PubSubService, events) {
 
         var serverUrl = config.serverUrl;
         var service = {

@@ -2,9 +2,9 @@
 (function() {
     'use strict';
     angular.module('shared')
-        .factory('toastService', toastService);
+        .factory('toastService', service);
 
-    function toastService($mdToast, PubSubService, events) {
+    function service($mdToast, PubSubService, events) {
 
         var last = {
             bottom: false,

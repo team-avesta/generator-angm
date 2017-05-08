@@ -3,9 +3,9 @@
 
     angular
         .module('shared')
-        .directive('focusMeDirective', focusMe);
+        .directive('focusMeDirective', directive);
 
-    function focusMe() {
+    function directive() {
         return {
             link: function(scope, elem, attrs, ngModel) {
                 elem[0].focus();

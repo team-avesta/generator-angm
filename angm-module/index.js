@@ -43,7 +43,7 @@ var ModuleGenerator = generators.Base.extend({
       this.moduleName = props.moduleName;
 
       this.slugifiedName = slugify(this.moduleName);
-      this.slugifiedNameCapitalize = _.camelize(this.slugifiedName);
+      this.slugifiedNameCapitalize = _.decapitalize(this.slugifiedName);
 
       this.modules = this.config.get('modules');
 
@@ -95,6 +95,10 @@ var ModuleGenerator = generators.Base.extend({
         value: 'addServiceFile',
         name: 'Service',
         checked: true
+      }, {
+        value: 'addTestFile',
+        name: 'Test',
+        checked: true
       }]
     }];
 
@@ -103,6 +107,7 @@ var ModuleGenerator = generators.Base.extend({
       this.addRouteFile = _.contains(props.folders, 'addRouteFile');
       this.addTplFile = _.contains(props.folders, 'addTplFile');
       this.addServiceFile = _.contains(props.folders, 'addServiceFile');
+      this.addTestFile = _.contains(props.folders, 'addTestFile');
 
       done();
     }.bind(this));
@@ -153,7 +158,9 @@ var ModuleGenerator = generators.Base.extend({
 
 	}
 
-	this.template('_test.js', 'app/modules/' + this.slugifiedName + '/' + this.slugifiedName + '-test.js');
+	if (this.addTestFile) {
+		this.template('_test.js', 'app/modules/' + this.slugifiedName + '/' + this.slugifiedName + '-test.js');
+	}
     this.template('_module.js', 'app/modules/' + this.slugifiedName + '/' + this.slugifiedName + 'Module.js');
 
     this.menu = this.config.get('menu');

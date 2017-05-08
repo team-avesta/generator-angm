@@ -3,11 +3,11 @@
 
 	angular
 		.module('dashboard')
-		.factory('MenuService', Menu);
+		.factory('MenuService', service);
 
-	Menu.$inject = ['$http'];
+	service.$inject = ['$http'];
 
-	function Menu($http) {
+	function service($http) {
 
 		var menu = [{
 			link: '.',

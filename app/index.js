@@ -211,10 +211,10 @@ var AngmGenerator = generators.Base.extend({
     // constants
     this.copy('app/modules/shared/constants/eventsConstantService.js');
     // directives
-    this.copy('app/modules/shared/directives/focusMe/focusMe.js');
-    this.copy('app/modules/shared/directives/inputLimit/inputLimit.js');
-    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinner.js');
-    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinnerDialog.js');
+    this.copy('app/modules/shared/directives/focusMe/focusMeDirective.js');
+    this.copy('app/modules/shared/directives/inputLimit/inputLimitDirective.js');
+    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinnerDirective.js');
+    this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinnerDialogDirective.js');
     this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinner.html');
 
     //Copy fonts file

@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    angular.module('shared').directive('loadingSpinnerDialogDirective', loadingSpinnerDialog);
+    angular.module('shared').directive('loadingSpinnerDialogDirective', directive);
 
-    function loadingSpinnerDialog(pubSubService, eventsConstantService) {
+    function directive(pubSubService, eventsConstantService) {
         var directive = {
             link: link,
             templateUrl: 'loadingSpinner.html',

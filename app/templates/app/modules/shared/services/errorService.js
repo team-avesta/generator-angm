@@ -2,9 +2,9 @@
     'use strict';
     angular
         .module('shared')
-        .factory('errorService', errorsService);
+        .factory('errorService', service);
 
-    function errorsService(PubSubService, events, $rootScope) {
+    function service(PubSubService, events, $rootScope) {
         var errorMessages = {};
 
         var errors = {

@@ -1,20 +1,12 @@
 (function() {
     'use strict';
 
-    /**
-     * @ngdoc function
-     * @name app.route:<%= slugifiedName %>Route
-     * @description
-     * # <%= slugifiedName %>Route
-     * Route of the app
-     */
-
     angular.module('<%= slugifiedName %>')
-        .config(<%= slugifiedNameCapitalize %>);
+        .config(route);
 
-    <%= slugifiedNameCapitalize %>.$inject = ['$stateProvider'];
+    route.$inject = ['$stateProvider'];
 
-    function <%= slugifiedNameCapitalize %> ($stateProvider) {
+    function route ($stateProvider) {
         <% if (angularMaterial) { %>
         $stateProvider
             .state('dashboard.<%= slugifiedName %>', {

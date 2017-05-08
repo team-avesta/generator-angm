@@ -3,7 +3,7 @@
 
     angular
         .module('shared')
-        .directive('focusMe', focusMe);
+        .directive('focusMeDirective', focusMe);
 
     function focusMe() {
         return {

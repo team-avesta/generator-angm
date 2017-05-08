@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('shared').directive('inputLimit', InputLimit);
+    angular.module('shared').directive('inputLimitDirective', InputLimit);
 
     function InputLimit() {
         var directive = {

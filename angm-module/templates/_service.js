@@ -5,14 +5,12 @@
         .module('<%= slugifiedName %>')
         .factory('<%= slugifiedNameCapitalize %>Service', service);
 
-    service.$inject = ['$http'];
+    service.$inject = [];
 
-    function service($http) {
+    function service() {
         var service = {};
 
-        return service {
-
-        };
+        return service;
 
         ////////////
         ///start writing function implementations below

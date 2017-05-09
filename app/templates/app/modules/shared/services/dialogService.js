@@ -3,7 +3,7 @@
     angular.module('shared')
         .factory('dialogService', service);
 
-    function service($mdDialog, pubSubService, events, $document) {
+    function service($mdDialog, pubSubService, eventsConstantService, $document) {
         var messageText = '';
         var displayType = 'popup';
 
@@ -30,11 +30,11 @@
             //$timeout(function() {
             switch (displayType) {
                 case 'popup':
-                    //pubSubService.publish(events.message._DISPLAY_POPUP_, [messageText]);
+                    //pubSubService.publish(eventsConstantService.message._DISPLAY_POPUP_, [messageText]);
                     dialog.showPopupDialog(data.title, data.msg);
                     break;
                 case 'confirmation':
-                    //pubSubService.publish(events.message._DISPLAY_CONFIRMATION_DIALOG_, [messageText]);
+                    //pubSubService.publish(eventsConstantService.message._DISPLAY_CONFIRMATION_DIALOG_, [messageText]);
                     dialog.showConfirmationDialog(data.title, data.msg, data.okBtn, data.cancelBtn, data.model);
                     break;
                 default:
@@ -47,7 +47,7 @@
         function init() {
             messageText = '';
             displayType = 'popup';
-            pubSubService.subscribe(events.message._DISPLAY_DIALOG_, dialog.displayDialogHandler);
+            pubSubService.subscribe(eventsConstantService.message._DISPLAY_DIALOG_, dialog.displayDialogHandler);
         }
 
         function showPopupDialog(title, msg) {
@@ -76,7 +76,7 @@
             $mdDialog
                 .show(confirm)
                 .then(function() {
-                    pubSubService.publish(events.message._USER_RESPONDED_, [model]);
+                    pubSubService.publish(eventsConstantService.message._USER_RESPONDED_, [model]);
                 }, function() {
                     console.log('click cancel');
                 });

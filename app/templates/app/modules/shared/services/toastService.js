@@ -4,7 +4,7 @@
     angular.module('shared')
         .factory('toastService', service);
 
-    function service($mdToast, PubSubService, events) {
+    function service($mdToast, PubSubService, eventsConstantService) {
 
         var last = {
             bottom: false,
@@ -28,8 +28,8 @@
         ////////////////////
 
         function init() {
-            PubSubService.subscribe(events.message._SHOW_SUCCESS_TOAST_MESSAGE_, ToastService.successToast);
-            PubSubService.subscribe(events.message._SHOW_FAILURE_TOAST_MESSAGE_, ToastService.failureToast);
+            PubSubService.subscribe(eventsConstantService.message._SHOW_SUCCESS_TOAST_MESSAGE_, ToastService.successToast);
+            PubSubService.subscribe(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, ToastService.failureToast);
         }
 
         function sanitizePosition() {

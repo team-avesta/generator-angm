@@ -2,7 +2,7 @@
     'use strict';
     angular.module('shared').factory('baseDataService', service);
 
-    function service($http, config, $q, PubSubService, events) {
+    function service($http, config, $q, pubSubService, events) {
 
         var serverUrl = config.serverUrl;
         var service = {
@@ -101,22 +101,22 @@
 
         function startLoader(isDialog) {
             if (isDialog) {
-                PubSubService.publish(events.message._SHOW_DIALOG_LOADING_SPINNER_, []);
+                pubSubService.publish(events.message._SHOW_DIALOG_LOADING_SPINNER_, []);
             } else {
-                PubSubService.publish(events.message._SHOW_LOADING_SPINNER_, []);
+                pubSubService.publish(events.message._SHOW_LOADING_SPINNER_, []);
             }
         }
 
         function toastDisplay(res) {
-            PubSubService.publish(events.message._HIDE_LOADING_SPINNER_, []);
-            PubSubService.publish(events.message._HIDE_DIALOG_LOADING_SPINNER_, []);
+            pubSubService.publish(events.message._HIDE_LOADING_SPINNER_, []);
+            pubSubService.publish(events.message._HIDE_DIALOG_LOADING_SPINNER_, []);
 
             var obj = res.data;
             // if (obj.code == 440) { ///440 is session failure code
             //   $state.go('login');
             // }
             if (!obj.Success) {
-                PubSubService.publish(events.message._ADD_ERROR_MESSAGE_, [{
+                pubSubService.publish(events.message._ADD_ERROR_MESSAGE_, [{
                     message: obj.message,
                     type: 'toast'
                 }]);
@@ -126,12 +126,12 @@
         }
 
         function errorCall(d, reject) {
-            PubSubService.publish(events.message._HIDE_LOADING_SPINNER_, []);
-            PubSubService.publish(events.message._HIDE_DIALOG_LOADING_SPINNER_, []);
+            pubSubService.publish(events.message._HIDE_LOADING_SPINNER_, []);
+            pubSubService.publish(events.message._HIDE_DIALOG_LOADING_SPINNER_, []);
 
             var obj = d.data;
             if (obj) {
-                PubSubService.publish(events.message._ADD_ERROR_MESSAGE_, [{
+                pubSubService.publish(events.message._ADD_ERROR_MESSAGE_, [{
                     message: obj.message ? obj.message : 'please contact administrator for more information.',
                     type: 'toast',
                     status: d.status

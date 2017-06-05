@@ -25,7 +25,8 @@
 	"angular-material-icons": "~0.6.0",
 	"angular-messages": ">=1.3.*",
 	"angular-material": ">=1.0.1",<% } %>
-	"angular-ui-router": "~0.2.10"
+	"angular-ui-router": "1.0.3",
+	"v-accordion": "~1.6.0"
   },
   "resolutions": {
     "angular": ">=1.3.*"

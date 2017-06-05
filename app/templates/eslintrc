@@ -27,7 +27,7 @@
 		"angular/on-watch":2,
 		"angular/no-http-callback":2,
 		"angular/controller-name":[2,"/[a-z].*Ctrl/"],
-		"angular/factory-name":[2,"/[a-z].*Ctrl/"],
+		"angular/factory-name":[2,"/[a-z].*Service/"],
 		"angular/di":2,
 		"angular/function-type":[2,"named"],
 		"angular/no-service-method":2,

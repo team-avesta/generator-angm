@@ -82,7 +82,7 @@
             service.startLoader(isDialog);
             return $q(function(resolve, reject) {
                 $http
-                    .get(serverUrl + endpoint + , {
+                    .get(serverUrl + endpoint, {
                         params: data
                     }, {
                         headers: {

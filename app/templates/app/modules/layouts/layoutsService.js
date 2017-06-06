@@ -5,9 +5,9 @@
         .module('layouts')
         .factory('layoutsService', service);
 
-    service.$inject = ['$http'];
+    service.$inject = [];
 
-    function service($http) {
+    function service() {
         var service = {};
 
         return service;

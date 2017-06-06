@@ -59,7 +59,7 @@
 		"no-redeclare":2,
 		"no-self-assign":2,
 		"no-useless-return":1,
-		"brace-style":[1,"stroustrup"],
+		"brace-style":[1,"1tbs"],
 		"one-var":[2,"never"]
 	}
 }

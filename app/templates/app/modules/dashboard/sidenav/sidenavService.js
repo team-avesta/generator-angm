@@ -5,9 +5,9 @@
 		.module('dashboard')
 		.factory('MenuService', service);
 
-	service.$inject = ['$http'];
+	service.$inject = [];
 
-	function service($http) {
+	function service() {
 
 		var menu = [{
 			link: '.',

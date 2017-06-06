@@ -5,7 +5,7 @@
         .module('shared')
         .factory('fileReaderService', service);
 
-    function service($q, $log) {
+    function service() {
 
         return {
             //readAsDataUrl: readAsDataURL
@@ -36,7 +36,7 @@
                     loaded: event.loaded
                 });
             };
-        };
+        }
 
         function getReader(deferred, scope) {
             var reader = new FileReader();
@@ -44,7 +44,7 @@
             reader.onerror = onError(reader, deferred, scope);
             reader.onprogress = onProgress(reader, scope);
             return reader;
-        };
+        }
 
         /*var readAsDataURL = function(file, scope) {
             var deferred = $q.defer();

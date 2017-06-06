@@ -6,7 +6,7 @@
 		.config(configure)
 		.run(runBlock);
 
-	configure.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider'];
+	configure.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider'];
 
 	function configure($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
@@ -24,9 +24,9 @@
 		<% } %>
 	}
 
-	runBlock.$inject = ['$rootScope'];
+	runBlock.$inject = [];
 
-	function runBlock($rootScope) {
+	function runBlock() {
 		'use strict';
 
 		console.log('AngularJS run() function...');

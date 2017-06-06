@@ -4,9 +4,9 @@
 	angular.module('dashboard')
 		.factory('dashboardService', service);
 
-	service.$inject = ['$http'];
+	service.$inject = [];
 
-	function service($http) {
+	function service() {
 
 		var list = [
 			{"feature": "Implemented Best Practices, following: John Papa's Guide"},

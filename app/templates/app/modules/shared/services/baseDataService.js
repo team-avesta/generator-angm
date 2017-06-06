@@ -2,7 +2,7 @@
     'use strict';
     angular.module('shared').factory('baseDataService', service);
 
-    function service($http, config, $q, pubSubService, eventsConstantServiceConstantService) {
+    function service($http, config, $q, pubSubService, eventsConstantService) {
 
         var serverUrl = config.serverUrl;
         var service = {

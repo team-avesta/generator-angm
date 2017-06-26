@@ -175,7 +175,8 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/dashboard/dashboardCtrl.js');
         this.copy('app/modules/dashboard/dashboardRoute.js');
         this.copy('app/modules/dashboard/dashboardService.js');
-        this.copy('app/modules/dashboard/dashboardModule.js');
+        this.copy('app/modules/dashboard/dashboard.module.js');
+        this.copy('app/modules/dashboard/dashboard.spec.js');
 
         //Copy layouts folder content
         if (this.angularMaterial == true) {
@@ -200,7 +201,7 @@ var AngmGenerator = generators.Base.extend({
 
         // Copy shared modules file
         // services
-        this.copy('app/modules/shared/sharedModule.js');
+        this.copy('app/modules/shared/shared.module.js');
         this.copy('app/modules/shared/services/baseDataService.js');
         this.copy('app/modules/shared/services/dialogService.js');
         this.copy('app/modules/shared/services/errorService.js');
@@ -220,11 +221,11 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinner.html');
 
         //copy vendor module files
-        this.copy('app/modules/vendor/vendorModule.js');
-        this.copy('app/modules/vendor/vendor-test.js');
+        this.copy('app/modules/vendor/vendor.module.js');
+        //this.copy('app/modules/vendor/vendor-test.js');
 
         //copy layout module files
-        this.copy('app/modules/layouts/layoutsModule.js');
+        this.copy('app/modules/layouts/layouts.module.js');
         this.copy('app/modules/layouts/layoutsCtrl.js');
         this.copy('app/modules/layouts/layoutsRoute.js');
         this.copy('app/modules/layouts/layoutsService.js');

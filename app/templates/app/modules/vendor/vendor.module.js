@@ -19,7 +19,10 @@
         'ngSanitize',
         'ngCookies',
         'ui.router',
-        'vAccordion'
+        'vAccordion',
+        'restangular',
+        'validation', //this module comes from team-avesta-angular-validation bower package
+        'validation.schema'
     ]);
 
 })();

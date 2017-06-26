@@ -222,7 +222,7 @@ var AngmGenerator = generators.Base.extend({
 
         //copy vendor module files
         this.copy('app/modules/vendor/vendor.module.js');
-        //this.copy('app/modules/vendor/vendor-test.js');
+        this.copy('app/modules/vendor/lib/validationRule/validationRule.module.js');
 
         //copy layout module files
         this.copy('app/modules/layouts/layouts.module.js');

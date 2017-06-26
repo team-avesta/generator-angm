@@ -102,18 +102,20 @@
     <!-- build:js(.) scripts/scripts.js -->
     <script src="app/app.js"></script>
     <script src="app/app.config.js"></script>
+    <!-- DASHBOARD MODULE -->
     <script src="app/modules/dashboard/dashboard.module.js"></script>
-    <script src="app/modules/layouts/layouts.module.js"></script>
-    <script src="app/modules/shared/shared.module.js"></script>
-    <script src="app/modules/vendor/vendor.module.js"></script>
     <script src="app/modules/dashboard/dashboardRoute.js"></script>
-    <script src="app/modules/layouts/layoutsRoute.js"></script>
     <script src="app/modules/dashboard/dashboardCtrl.js"></script>
-    <script src="app/modules/dashboard/sidenav/sidenavCtrl.js"></script>
-    <script src="app/modules/layouts/layoutsCtrl.js"></script>
     <script src="app/modules/dashboard/dashboardService.js"></script>
+    <script src="app/modules/dashboard/sidenav/sidenavCtrl.js"></script>
     <script src="app/modules/dashboard/sidenav/sidenavService.js"></script>
+    <!-- LAYOUTS MODULE (this module is used just to provide readymade html snippets)-->
+    <script src="app/modules/layouts/layouts.module.js"></script>
+    <script src="app/modules/layouts/layoutsRoute.js"></script>
+    <script src="app/modules/layouts/layoutsCtrl.js"></script>
     <script src="app/modules/layouts/layoutsService.js"></script>
+    <!-- SHARED MODULE -->
+    <script src="app/modules/shared/shared.module.js"></script>
     <script src="app/modules/shared/constants/eventsConstantService.js"></script>
     <script src="app/modules/shared/services/baseDataService.js"></script>
     <script src="app/modules/shared/services/dateConvertService.js"></script>
@@ -128,6 +130,9 @@
     <script src="app/modules/shared/directives/inputLimit/inputLimitDirective.js"></script>
     <script src="app/modules/shared/directives/loadingSpinner/loadingSpinnerDialogDirective.js"></script>
     <script src="app/modules/shared/directives/loadingSpinner/loadingSpinnerDirective.js"></script>
+    <!-- VENDOR MODULE -->
+    <script src="app/modules/vendor/vendor.module.js"></script>
+    <script src="app/modules/vendor/lib/validationRule/validationRule.module.js"></script>
     <!-- endbuild -->
 </body>
 

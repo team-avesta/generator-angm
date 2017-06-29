@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="<%= slugifiedAppName %>">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		<%= slugifiedAppName %>
+	</title>
+	<meta name="description" content="<%= appDescription %>" />
+	<meta name="author" content="" />
+	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes" />
+	<link rel="shortcut icon" href="app/assets/images/favicon.ico" />
+	<link rel="apple-touch-icon" href="app/assets/images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="app/assets/images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="app/assets/images/apple-touch-icon-114x114.png" />
+	<!-- build:css(.) styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/application.css -->
+	<link rel="stylesheet" href="styles/application.css">
+	<!-- endbuild -->
+	<style>
+	body,
+	md-content.md-blue-grey-theme {
+		background-color: #eee;
+	}
+
+	md-toolbar:not(.md-hue-1),
+	.md-fab {
+		fill: #fff;
+	}
+
+	md-sidenav {
+		fill: #737373;
+	}
+
+	.user-avatar {
+		border-radius: 99%;
+	}
+
+	md-toolbar.md-tall {
+		height: 64px;
+		max-height: 64px;
+		min-height: 64px;
+	}
+
+	code {
+		color: #4285f4;
+		-webkit-font-smoothing: auto;
+		font-weight: 300;
+		background-color: #F2F2F2;
+		padding: 10px;
+	}
+
+	.text-center {
+		text-align: center!important
+	}
+
+	ul {
+		list-style: none
+	}
+
+	.sidebar-container {
+		width: 100%;
+		height: 100%;
+		transition: 0.3s;
+		background-color: white;
+	}
+
+	.sidebar-initial-width {
+		max-width: 100px !important;
+	}
+
+	.sidebar-final-width {
+		max-width: 235px;
+	}
+
+	.m8 {
+		margin: 8px;
+	}
+
+	.whitebg {
+		background-color: white;
+	}
+	</style>
+</head>
+
+<body ng-cloak>
+	<!--[if lte IE 8]>
+	  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<!--Beginning-->
+	<div ui-view layout="row" layout-fill></div>
+	<!--End-->
+	<!-- build:js(.) scripts/vendor.js -->
+	<!-- bower:js -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:js(.) scripts/scripts.js -->
+	<script src="app/app.js"></script>
+	<script src="app/app.config.js"></script>
+	<!-- DASHBOARD MODULE -->
+	<script src="app/modules/dashboard/dashboard.module.js"></script>
+	<script src="app/modules/dashboard/dashboardRoute.js"></script>
+	<script src="app/modules/dashboard/dashboardCtrl.js"></script>
+	<script src="app/modules/dashboard/dashboardService.js"></script>
+	<script src="app/modules/dashboard/sidenav/sidenavCtrl.js"></script>
+	<script src="app/modules/dashboard/sidenav/sidenavService.js"></script>
+	<!-- LAYOUTS MODULE (this module is used just to provide readymade html snippets)-->
+	<script src="app/modules/layouts/layouts.module.js"></script>
+	<script src="app/modules/layouts/layoutsRoute.js"></script>
+	<script src="app/modules/layouts/layoutsCtrl.js"></script>
+	<script src="app/modules/layouts/layoutsService.js"></script>
+	<!-- SHARED MODULE -->
+	<script src="app/modules/shared/shared.module.js"></script>
+	<script src="app/modules/shared/constants/eventsConstantService.js"></script>
+	<script src="app/modules/shared/services/baseDataService.js"></script>
+	<script src="app/modules/shared/services/dateConvertService.js"></script>
+	<script src="app/modules/shared/services/dialogService.js"></script>
+	<script src="app/modules/shared/services/errorService.js"></script>
+	<script src="app/modules/shared/services/exceptionHandlerService.js"></script>
+	<script src="app/modules/shared/services/fileReaderService.js"></script>
+	<script src="app/modules/shared/services/modelTransformerService.js"></script>
+	<script src="app/modules/shared/services/pubSubService.js"></script>
+	<script src="app/modules/shared/services/toastService.js"></script>
+	<script src="app/modules/shared/services/authService.js"></script>
+	<script src="app/modules/shared/directives/policy/authPolicyDirective.js"></script>
+	<script src="app/modules/shared/directives/focusMe/focusMeDirective.js"></script>
+	<script src="app/modules/shared/directives/inputLimit/inputLimitDirective.js"></script>
+	<script src="app/modules/shared/directives/loadingSpinner/loadingSpinnerDialogDirective.js"></script>
+	<script src="app/modules/shared/directives/loadingSpinner/loadingSpinnerDirective.js"></script>
+	<!-- VENDOR MODULE -->
+	<script src="app/modules/vendor/vendor.module.js"></script>
+	<script src="app/modules/vendor/lib/validationRule/validationRule.module.js"></script>
+	<!-- endbuild -->
+</body>
+
+</html>

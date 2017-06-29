@@ -128,6 +128,38 @@ var AngmGenerator = generators.Base.extend({
         }.bind(this));
     },
 
+    askForPolicyBasedAuthModules: function() {
+        var done = this.async();
+        var prompts = [{
+            type: 'checkbox',
+            name: 'auth',
+            message: 'Would you like to include Policy based Auth Modules in the project?',
+            choices: [{
+                value: 'policyBasedAuth',
+                name: 'Yes',
+                checked: true
+            }, {
+                value: 'noAuth',
+                name: 'No',
+                checked: false
+            }]
+        }];
+
+        this.prompt(prompts, function(props) {
+            this.policyBasedAuth = _.contains(props.auth, 'policyBasedAuth');
+            this.noAuth = _.contains(props.auth, 'noAuth');
+
+            if (this.policyBasedAuth) {
+                this.config.set('policyBasedAuth', true);
+            }
+            if (this.noAuth) {
+                this.config.set('policyBasedAuth', false);
+            }
+
+            done();
+        }.bind(this));
+    },
+
     createApplicationScaffold: function() {
         // Create public folders
         //mkdirp('app/modules/home');
@@ -151,6 +183,9 @@ var AngmGenerator = generators.Base.extend({
         mkdirp('app/modules/shared/directives/focusMe');
         mkdirp('app/modules/shared/directives/inputLimit');
         mkdirp('app/modules/shared/directives/loadingSpinner');
+        if (this.policyBasedAuth == true) {
+            mkdirp('app/modules/shared/directives/policy');
+        }
         mkdirp('app/modules/vendor');
         mkdirp('app/modules/layouts');
 
@@ -211,6 +246,9 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/shared/services/pubSubService.js');
         this.copy('app/modules/shared/services/toastService.js');
         this.copy('app/modules/shared/services/dateConvertService.js');
+        if (this.policyBasedAuth == true) {
+            this.copy('app/modules/shared/services/authService.js');
+        }
         // constants
         this.copy('app/modules/shared/constants/eventsConstantService.js');
         // directives
@@ -219,6 +257,9 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinnerDirective.js');
         this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinnerDialogDirective.js');
         this.copy('app/modules/shared/directives/loadingSpinner/loadingSpinner.html');
+        if (this.policyBasedAuth == true) {
+            this.copy('app/modules/shared/directives/policy/authPolicyDirective.js');
+        }
 
         //copy vendor module files
         this.copy('app/modules/vendor/vendor.module.js');
@@ -293,7 +334,9 @@ var AngmGenerator = generators.Base.extend({
     createApplicationTemplateFiles: function() {
         this.template('_package.json', 'package.json');
         this.template('_bower.json', 'bower.json');
-        if (this.angularMaterial == true) {
+        if (this.angularMaterial == true && this.policyBasedAuth == true) {
+            this.template('_index-material-auth.html', 'index.html');
+        } else if (this.angularMaterial == true && this.policyBasedAuth == false) {
             this.template('_index-material.html', 'index.html');
         } else {
             this.template('_index.html', 'index.html');

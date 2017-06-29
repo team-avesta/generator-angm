@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "grunt",
-    "test": "karma start karma.conf.js",
+    "test": "karma start --reporters clear-screen,dots --single-run karma.conf.js",
     "postinstall": "bower install --config.interactive=false",
     "precommit": "grunt lint"
   },

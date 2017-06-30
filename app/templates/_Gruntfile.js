@@ -371,6 +371,33 @@ module.exports = function(grunt) {
             }
         },
 
+        injector: {
+			options: {},
+			dev: {
+				files: {
+					'index.html': [
+						//'bower.json',
+						'app/app.js',
+						'app/app.config.js',
+						'app/**/*module.js',
+						'app/**/*Route.js',
+						'app/**/*Ctrl.js',
+						'app/**/*Service.js',
+						'app/**/*Directive.js'
+					]
+				}
+			},
+			production: {
+				files: {
+					'index.html': [
+						'app/assets/css/**/*.css',
+						'app/assets/js/*.js'
+					]
+
+				}
+			}
+		},
+
         ngtemplates: {
             dist: {
                 options: {
@@ -500,6 +527,7 @@ module.exports = function(grunt) {
         grunt.task.run([
             'clean:server',
             'wiredep',
+            'injector:dev',
             'concurrent:server',
             'postcss:server',
             'connect:livereload',
@@ -529,6 +557,7 @@ module.exports = function(grunt) {
         'postcss',
         //'ngtemplates',
         'concat',
+        'injector:production',
         'ngAnnotate',
         'copy:dist',
         'cdnify',

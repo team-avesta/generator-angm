@@ -25,7 +25,8 @@ module.exports = function(config) {
             'app/app.js',
             'app/app.config.js',
             'app/modules/**/*.module.js',
-            'app/modules/dashboard/**.js'
+            'app/modules/dashboard/**.js',
+            'app/modules/shared/services/tests/**.js'
         ],
 
         // Test results reporter to use

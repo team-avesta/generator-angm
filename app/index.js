@@ -246,9 +246,16 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/shared/services/pubSubService.js');
         this.copy('app/modules/shared/services/toastService.js');
         this.copy('app/modules/shared/services/dateConvertService.js');
+        this.copy('app/modules/shared/services/restangularConfigService.js');
+        this.copy('app/modules/shared/services/schemaValidateService.js');
         if (this.policyBasedAuth == true) {
             this.copy('app/modules/shared/services/authService.js');
         }
+
+        //tests
+        this.copy('app/modules/shared/services/tests/restangularConfigService.spec.js');
+        this.copy('app/modules/shared/services/tests/validationRule.spec.js');
+
         // constants
         this.copy('app/modules/shared/constants/eventsConstantService.js');
         // directives

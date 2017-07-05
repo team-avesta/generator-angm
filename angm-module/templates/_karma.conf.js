@@ -22,11 +22,29 @@ module.exports = function(config) {
             'src/bower_components/angular-messages/angular-messages.js',
             'src/bower_components/angular-material-icons/angular-material-icons.js',
             'src/bower_components/v-accordion/dist/v-accordion.js',
+            'src/bower_components/restangular/dist/restangular.js',
+            'src/bower_components/team-avesta-angular-validation/dist/angular-validation.js',
+            'src/bower_components/team-avesta-angular-validation/dist/angular-validation-rule.js',
+            'src/bower_components/angular-validation-schema/angular-validation-schema.js',
             'app/app.js',
             'app/app.config.js',
+            'app/modules/shared/shared.module.js',
+            'app/modules/vendor/**.js',
+            'app/modules/vendor/**/*.js',
+            'app/modules/shared/sharedModule.js',
+            'app/modules/shared/constants/*.js',
+            'app/modules/shared/directives/**/*.js',
+            'app/modules/shared/services/*.js',
             'app/modules/**/*.module.js',
-            'app/modules/dashboard/**.js',<% _.each(arrayModules, function(module) { %>
-            'app/modules/<%= module.name %>/**/*.js', <% }); %>
+            'app/modules/dashboard/**.js',
+            'app/modules/shared/services/tests/**.js',
+            <% _.each(arrayModules, function(module) { %>
+            'app/modules/<%= module.name %>/<%= module.name %>module.js',
+            'app/modules/<%= module.name %>/<%= module.name %>Ctrl.js',
+            'app/modules/<%= module.name %>/<%= module.name %>Route.js',
+            'app/modules/<%= module.name %>/<%= module.name %>Service.js',
+            'app/modules/<%= module.name %>/<%= module.name %>Model.js',
+            'app/modules/<%= module.name %>/<%= module.name %>.spec.js', <% }); %>
         ],
 
         // Test results reporter to use

@@ -4,28 +4,10 @@
 module.exports = function(config) {
     config.set({
         // Frameworks to use
-        frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai'],
+        frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai', 'wiredep'],
 
         // List of files / patterns to load in the browser
         files: [
-            'src/bower_components/es5-shim/es5-shim.js',
-            'src/bower_components/json3/lib/json3.min.js',
-            'src/bower_components/angular/angular.js',
-            'src/bower_components/angular-resource/angular-resource.js',
-            'src/bower_components/angular-mocks/angular-mocks.js',
-            'src/bower_components/angular-cookies/angular-cookies.js',
-            'src/bower_components/angular-sanitize/angular-sanitize.js',
-            'src/bower_components/angular-animate/angular-animate.js',
-            'src/bower_components/angular-ui-router/release/angular-ui-router.js',
-            'src/bower_components/angular-aria/angular-aria.js',
-            'src/bower_components/angular-material/angular-material.js',
-            'src/bower_components/angular-messages/angular-messages.js',
-            'src/bower_components/angular-material-icons/angular-material-icons.js',
-            'src/bower_components/v-accordion/dist/v-accordion.js',
-            'src/bower_components/restangular/dist/restangular.js',
-            'src/bower_components/team-avesta-angular-validation/dist/angular-validation.js',
-            'src/bower_components/team-avesta-angular-validation/dist/angular-validation-rule.js',
-            'src/bower_components/angular-validation-schema/angular-validation-schema.js',
             'app/app.js',
             'app/app.config.js',
             'app/modules/shared/shared.module.js',
@@ -55,7 +37,8 @@ module.exports = function(config) {
             'karma-sinon-chai',
             'karma-coverage',
             'karma-phantomjs-launcher',
-            'karma-spec-reporter'
+            'karma-spec-reporter',
+            'karma-wiredep'
         ],
 
         // Enable / disable colors in the output (reporters and logs)

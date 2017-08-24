@@ -1,0 +1,169 @@
+<md-dialog style="min-width:550px; min-height: 85%;">
+	<form ng-cloak name="subQuestionForm">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Add Sub Question</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="ctrl.cancel()">
+					<i class="material-icons md-concrete">close</i>
+				</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content style="height: calc(100vh - 112px);">
+			<div layout="row" flex>
+				<!-- calculation screen -->
+				<div layout="column" flex class="m8">
+					<md-radio-group ng-model="ctrl.qp_mode" class="mb16">
+						<div class="grid-subtitle font-600 mb16">Question Mode:</div>
+						<div layout="row" layout-align="start center">
+							<md-radio-button class="ml16 grid-subtitle font-400 mb0" value="s">Single</md-radio-button>
+							<md-radio-button class="ml16 grid-subtitle font-400 mb0" value="m">Multiple</md-radio-button>
+						</div>
+					</md-radio-group>
+					<md-radio-group ng-model="ctrl.qp_type">
+						<div class="grid-subtitle font-600 mb16">Question Type:</div>
+						<div layout="row" layout-align="start center">
+							<md-radio-button class="ml16 grid-subtitle font-400 mb0" value="c">All Compulsory</md-radio-button>
+							<md-radio-button class="ml16 grid-subtitle font-400 mb0" value="co">Optional</md-radio-button>
+						</div>
+					</md-radio-group>
+					<!--  <div layout="column" ng-if="ctrl.qp_type == 'co'">
+					 <md-input-container>
+						 <label>Optional Questions to Attempt</label>
+						 <input ng-model="ctrl.subque.optional_question_attempt" name="optional_question_attempt">
+					 </md-input-container>
+				 </div> -->
+					<!-- multiple mode -->
+					<div layout="column" flex ng-if="ctrl.qp_mode == 'm'">
+						<md-input-container>
+							<label>Total Sub Question No.</label>
+							<input type="number" ng-minlength="1" ng-maxlength="2" min="1" max="26" name="total_que_no" ng-model="ctrl.subquestion.total_que_no" required>
+							<div ng-messages="subQuestionForm.total_que_no.$error">
+								<div ng-message="max">Enter the number between 1 to 26.</div>
+							</div>
+						</md-input-container>
+						<md-input-container ng-if="ctrl.qp_type == 'co'">
+							<label>Optional Questions to Attempt</label>
+							<input ng-model="ctrl.subque.optional_question_attempt" name="optional_question_attempt" required>
+						</md-input-container>
+						<md-input-container>
+							<label>Sub Question Pattern</label>
+							<md-select ng-model="ctrl.subquestion.subque_pattern" md-on-close="ctrl.onChnageSubQuePattern()">
+								<md-option value="0">Alphabetic (a - z)</md-option>
+								<md-option value="1">Numeric (1 - 10)</md-option>
+								<md-option value="2">Romans ( i - x)</md-option>
+								<md-option value="3">Manually</md-option>
+							</md-select>
+						</md-input-container>
+						<md-input-container>
+							<label>Attribute</label>
+							<input name="attrib" ng-model="ctrl.subquestion.attrib">
+						</md-input-container>
+						<md-input-container>
+							<label>Total Marks</label>
+							<input md-autofocus name="que_no" ng-model="ctrl.subquestion.total_subque_marks" required>
+						</md-input-container>
+						<md-radio-group ng-model="ctrl.marks_dist_type" ng-change="ctrl.onMarksDistType()">
+							<div class="grid-subtitle font-600 mb16">Marks Distribution:</div>
+							<div layout="row" layout-align="start center">
+								<md-radio-button class="ml16 grid-subtitle font-400 mb0" value="1">Equally</md-radio-button>
+								<md-radio-button class="ml16 grid-subtitle font-400 mb0" value="2">Manually</md-radio-button>
+							</div>
+						</md-radio-group>
+					</div>
+					<!-- single mode -->
+					<div layout="column" flex ng-if="ctrl.qp_mode == 's'">
+						<md-input-container>
+							<label>Total Sub Question No.</label>
+							<input name="que_no" ng-model="ctrl.subquestion.que_no" required>
+						</md-input-container>
+						<md-input-container ng-if="ctrl.qp_type == 'co'">
+							<label>Optional Questions to Attempt</label>
+							<input ng-model="ctrl.subque.optional_question_attempt" name="optional_question_attempt" required>
+						</md-input-container>
+						<md-input-container>
+							<label>Total Marks</label>
+							<input type="number" name="tmarks" ng-model="ctrl.subquestion.tmarks" required>
+						</md-input-container>
+						<md-input-container>
+							<label>Attribute</label>
+							<input name="attrib" ng-model="ctrl.subquestion.m_attrib">
+						</md-input-container>
+					</div>
+				</div>
+				<!-- split screen -->
+				<div layout="column" class="m8" ng-if="ctrl.splitScreen" ng-hide="ctrl.qp_mode == 's'" md-whiteframe="1">
+					<md-subheader>Choose Split Options - {{ctrl.split_option_name}}</md-subheader>
+					<div layout="column" flex style="height:330px; min-width: 370px; overflow: auto; padding: 8px;" layout-wrap>
+						<div class="mb8" style="width: 150px" ng-repeat="data in ctrl.subqueModel">
+							<div layout="row" layout-align="start center" class="grid">
+								<md-input-container class="que-container" md-no-float>
+									<input class="align-center" name="que_no" placeholder="Que No." ng-model="data.que_no">
+								</md-input-container>
+								<md-input-container class="que-container" md-no-float>
+									<input class="align-center" name="tmarks" placeholder="Marks" ng-model="data.tmarks">
+								</md-input-container>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<span flex></span>
+			<md-button class="md-button md-accent" ng-click="ctrl.cancel()">
+				Cancel
+			</md-button>
+			<md-button class="md-button md-accent md-raised" ng-disabled="!ctrl.qp_mode || !ctrl.qp_type" ng-click="ctrl.save()">
+				Save
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>
+
+
+<!-- Type 2 -->
+
+<!-- <md-dialog style="max-width: 99%;max-height: 99%;width: 100%;height: 100%;" ng-cloak>
+  <div style="width: 100%; height:100%; position: relative;" class="grid" layout="row" layout-align="center start">
+    <div layout="column" style="width:650px;">
+      <div layout-padding class="grid-title font-600" style="margin-top:75px;">Choose Programme</div>
+      <div layout="row" class="mark-sheet-edit-header">
+        <div flex='10' class="mark-sheet-edit-header-td">
+          <span>Sr No</span>
+        </div>
+        <div flex='20' class="mark-sheet-edit-header-td">
+          <span>Code</span>
+        </div>
+        <div flex='60' class="mark-sheet-edit-header-td">
+          <span>Subject</span>
+        </div>
+        <div flex='10' class="mark-sheet-edit-header-td">
+          <span>Select</span>
+        </div>
+      </div>
+      <div layout="row" class="mark-sheet-edit-header border-top-none" md-auto-select ng-repeat="programme in ctrl.programmeList">
+        <div flex='10' class="mark-sheet-edit-td">
+          <span>{{$index + 1}}</span>
+        </div>
+        <div flex='20' class="mark-sheet-edit-td">
+          <span>{{programme.code}}</span>
+        </div>
+        <div flex='60' class="mark-sheet-edit-td">
+          <span class="programme-name">{{programme.name}}</span>
+        </div>
+        <div flex='10' class="mark-sheet-edit-td">
+          <md-checkbox class="no-mar" ng-model="programme.checked" ng-click="ctrl.updateSelection($index, programme)"></md-checkbox>
+        </div>
+      </div>
+      <div layout="row" layout-align="end start" class="mt16">
+      <md-button class="md-accent md-raised no-mar" ng-click="ctrl.onSelectProgramme()">
+        GO
+      </md-button>
+      </div>
+    </div>
+    <md-button ng-if="ctrl.fromMenu" class="md-icon-button" ng-click="ctrl.cancel()" style="position: absolute; right: 0; top: 0; z-index: 1;">
+      <i class="material-icons md-dark">close</i>
+    </md-button>
+  </div>
+</md-dialog> -->

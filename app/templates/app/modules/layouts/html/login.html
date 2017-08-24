@@ -1,0 +1,67 @@
+<div class="login" flex layout="column" layout-align="center center">
+<div class="svgcontainer">
+		<svg jsname="BUfzDd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" preserveAspectRatio="xMinYMin slice" aria-hidden="true">
+			<path fill="#F3E5F5" d="M592.66 0c-15 64.092-30.7 125.285-46.598 183.777C634.056 325.56 748.348 550.932 819.642 809.5h419.672C1184.518 593.727 1083.124 290.064 902.637 0H592.66z"></path>
+			<path fill="#E1BEE7" d="M545.962 183.777c-53.796 196.576-111.592 361.156-163.49 490.74 11.7 44.494 22.8 89.49 33.1 134.883h404.07c-71.294-258.468-185.586-483.84-273.68-625.623z"></path>
+			<path fill="#E0F2F1" d="M153.89 0c74.094 180.678 161.088 417.448 228.483 674.517C449.67 506.337 527.063 279.465 592.56 0H153.89z"></path>
+			<path fill="#B2DFDB" d="M153.89 0H0v809.5h415.57C345.477 500.938 240.884 211.874 153.89 0z"></path>
+			<path fill="#EDE7F6" d="M1144.22 501.538c52.596-134.583 101.492-290.964 134.09-463.343 1.2-6.1 2.3-12.298 3.4-18.497 0-.2.1-.4.1-.6 1.1-6.3 2.3-12.7 3.4-19.098H902.536c105.293 169.28 183.688 343.158 241.684 501.638v-.1z"></path>
+			<path fill="#D1C4E9" d="M1285.31 0c-2.2 12.798-4.5 25.597-6.9 38.195C1321.507 86.39 1379.603 158.98 1440 257.168V0h-154.69z"></path>
+			<path fill="#C5CAE9" d="M1278.31,38.196C1245.81,209.874 1197.22,365.556 1144.82,499.838L1144.82,503.638C1185.82,615.924 1216.41,720.211 1239.11,809.6L1439.7,810L1439.7,256.768C1379.4,158.78 1321.41,86.288 1278.31,38.195L1278.31,38.196z"></path>
+		</svg>
+	</div>
+  <div class="login-container">
+    <p class="login-title">University Admin</p>
+    <form name="adminLoginFrom" md-whiteframe="2" class="whitebg">
+      <div layout="row">
+        <!-- login -->
+        <div layout="column" layout-align="center center" layout-padding flex>
+          <div class="grid-title font-600">Sign in to continue to University Admin</div>
+          <md-input-container md-no-float class="pb20 w100p">
+            <label>Enter Your Registered User ID</label>
+            <input focus-me type="text" name="user_id" ng-minlength="10" ng-maxlength="10" ng-pattern="/^\d{10}$/">
+            <div ng-messages="adminLoginFrom.user_id.$error">
+              <div ng-message="minlength">Min length is 10.</div>
+              <div ng-message="maxlength">Max length is 10.</div>
+            </div>
+          </md-input-container>
+          <div layout="row" layout-align="space-around center">
+            <md-button ng-click="ctrl.onClickLoginBtn()" class="md-accent md-raised">Next</md-button>
+          </div>
+        </div>
+        <!-- register -->
+        <div layout="column" layout-align="center center" md-whiteframe="2" class="m16" layout-padding flex>
+          <div class="grid-title font-600">New User Register here.</div>
+          <md-button ng-click="ctrl.onClickRegisterBtn()" class="md-accent md-raised no-padding">Register</md-button>
+        </div>
+      </div>
+      <div layout="column" class="whitebg" layout="end center">
+        <div>
+          <md-button ng-click="ctrl.onClickForgorPasswordBtn()" class="md-accent">Forgot Password</md-button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div layout="column" class="contact-container whitebg mt16 mb16" layout-align="start start" md-whiteframe="1">
+    <div class="w100p" layout="row" layout-align="center center">
+      <p class="no-mar contact-text mb16"><strong>For Support</strong></p>
+    </div>
+    <div class="w100p" layout="row" layout-align="center center">
+      <div class="w100p" layout="column" layout-align="center center">
+        <span flex class="mr16 mb8 contact-text"><strong>Contact Us</strong></span>
+        <span flex class="mr16 contact-text">+91-9925004484</span>
+      </div>
+      <div class="w100p" layout="column" layout-align="center center">
+        <span flex class="ml16 mb8 contact-text"><strong>Email</strong></span>
+        <span flex class="ml16 contact-text">support@shreegroup.co</span>
+      </div>
+    </div>
+  </div>
+  <div layout="column" layout-align="start start">
+    <a href="images/pdf/demo.pdf" download layout="row" layout-align="center center" style="text-decoration: none;">
+      <img width="24px" height="auto" src="images/pdf.png">
+      <md-button md-no-ink class="md-accent">Download Instruction Manual</md-button>
+    </a>
+  </div>
+</div>
+

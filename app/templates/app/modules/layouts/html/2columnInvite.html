@@ -1,0 +1,22 @@
+<div layout="column" class="grid" layout-fill>
+	<div layout="row" layout-align="first center" class="h48">
+		<div flex layout-padding flex class="grid-title font-600">Faculty Invitation</div>
+		<md-checkbox style="margin: 0px 16px 0px 0px " ng-model="invitee.value">SELECT ALL</md-checkbox>
+	</div>
+	<md-content style="height: calc(100vh - 176px);">
+		<div ng-repeat="invitee in ctrl.invitationData" layout="column" class="two-column">
+			<div layout="row" layout-align="start center" class="invite-container">
+				<md-checkbox flex="10" ng-model="invitee.value"></md-checkbox>
+				<div class="md-list-item-text" layout="column">
+					<div class="invite-name">{{invitee.name}}</div>
+					<span class="invite-email">{{invitee.email}}</span>
+				</div>
+			</div>
+		</div>
+	</md-content>
+	<div layout="row" layout-align="end center" class="h48">
+		<md-button md-no-ink class="md-accent md-raised">
+			Send Invitation
+		</md-button>
+	</div>
+</div>

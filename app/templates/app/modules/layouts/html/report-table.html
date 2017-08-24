@@ -1,0 +1,73 @@
+<div layout="column" class="grid" layout-fill>
+	<div layout="row" layout-align="first center" class="h48">
+		<div layout-padding flex class="grid-title font-600">Hourly Production Report</div>
+	</div>
+	<div layout="row" layout-align="first center">
+		<md-input-container flex="30" class="ml8">
+			<label>Select Operation Type</label>
+			<md-select name="status" ng-model="vm.filter.operation_type">
+				<md-option value="SCAN">Scan</md-option>
+				<md-option value="QC">QC</md-option>
+				<md-option value="IN_GUN">Inward Gunning</md-option>
+				<md-option value="OUT_GUN">Outward Gunning</md-option>
+			</md-select>
+		</md-input-container>
+		<div flex="5"></div>
+		<md-input-container flex="30" class="ml8">
+			<label>Date (DD-MM-YYYY)</label>
+			<input type="text" ng-model="vm.filter.date" mask='39-19-9999'>
+		</md-input-container>
+		<div flex="5"></div>
+		<md-input-container flex="30">
+			<label>Select Shift</label>
+			<md-select name="shift_name" placeholder="Select Shift" ng-model="vm.filter.shift_id">
+				<md-option ng-value="shift.id" ng-repeat="shift in vm.shiftData">{{shift.shift_name}}</md-option>
+			</md-select>
+		</md-input-container>
+		<div flex></div>
+		<md-button class="md-accent" ng-click="vm.onClickReset()">
+			Reset
+		</md-button>
+		<md-button class="md-accent md-raised" ng-click="vm.onClickGo()" ng-disabled="!vm.filter.date">
+			Go
+		</md-button>
+	</div>
+	<div layout="column" class="p8 main-report-container" flex ng-show="vm.operatorData.length > 0">
+		<div layout="row" class="report-table-header">
+			<div class="report-table-header-td" style="width: 50px">
+				<span>SR</span>
+			</div>
+			<div class="report-table-header-td" style="width: 100px">
+				<span>USERID</span>
+			</div>
+			<div class="report-table-header-td" style="width: 300px">
+				<span>USER NAME</span>
+			</div>
+			<div class="report-table-header-td" style="width: 90px">
+				<span>TOTAL</span>
+			</div>
+			<div class="report-table-header-td" style="width: 90px" ng-repeat="hour in vm.shiftHours">
+				<span>{{vm.getFormatHour(hour)}}</span>
+			</div>
+		</div>
+		<!-- <md-content class="report-container"> -->
+		<div layout="row" class="report-table-header border-top-none" md-auto-select ng-repeat="operator in vm.operatorData">
+			<div class="report-table-td" style="width: 50px">
+				<span>{{$index + 1}}</span>
+			</div>
+			<div class="report-table-td" style="width: 100px">
+				<span>{{operator.login_id}}</span>
+			</div>
+			<div class="report-table-td" style="width: 300px">
+				<span>{{operator.user_name}}</span>
+			</div>
+			<div class="report-table-td" style="width: 90px">
+				<span>{{operator.totalPro}}</span>
+			</div>
+			<div class="report-table-td" style="width: 90px" ng-repeat="pr in operator.finalHour">
+				<span>{{pr.hours}}</span>
+			</div>
+		</div>
+		<!-- </md-content> -->
+	</div>
+</div>

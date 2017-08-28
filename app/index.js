@@ -278,7 +278,17 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/layouts/layoutsRoute.js');
         this.copy('app/modules/layouts/layoutsService.js');
         this.copy('app/modules/layouts/layouts.html');
-        this.copy('app/modules/layouts/html/1Column.html');
+        this.copy('app/modules/layouts/html/2columnInvite.html');
+        this.copy('app/modules/layouts/html/dialog.html');
+        this.copy('app/modules/layouts/html/gridFormWithBlock.html');
+        this.copy('app/modules/layouts/html/gridListWithFilter.html');
+        this.copy('app/modules/layouts/html/login.html');
+        this.copy('app/modules/layouts/html/otp.html');
+        this.copy('app/modules/layouts/html/registration.html');
+        this.copy('app/modules/layouts/html/reportTable.html');
+        this.copy('app/modules/layouts/html/gridFormWithBlockCtrl.js');
+		this.copy('app/modules/layouts/html/gridListWithFilterCtrl.js');
+
 
         //copy gitignore files
         this.copy('.gitignore');
@@ -324,6 +334,7 @@ var AngmGenerator = generators.Base.extend({
         this.copy('styles/sass/stepper.scss', 'assets/sass/stepper.scss');
         this.copy('styles/sass/typography.scss', 'assets/sass/typography.scss');
         this.copy('styles/sass/variable.scss', 'assets/sass/variable.scss');
+        this.copy('styles/sass/report-table.scss', 'assets/sass/report-table.scss');
 
         // Copy project files
         //this.copy('Gruntfile.js');

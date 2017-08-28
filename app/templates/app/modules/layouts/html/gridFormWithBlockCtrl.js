@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	angular
-		.module('collegeApp')
+		.module('layouts')
 		.controller('CreateFacultyController', ['$state',
 			'StateConstant',
 			CreateFacultyController
@@ -11,11 +11,8 @@
 		var self = this;
 		self.block_state = 'Block';
 		self.isBlock = false;
-		self.cancel = cancel;
-		self.save = save;
-		self.onBackBtn = onBackBtn;
-		self.onBlockFaculty = onBlockFaculty;
 		self.instructionFlag = false;
+		self.onBlockFaculty = onBlockFaculty;
 		self.onHelpBtn = onHelpBtn;
 		self.onCloseBtn = onCloseBtn;
 
@@ -39,31 +36,19 @@
 		}
 
 		self.programmeData = [{
-			id:'1',
-			name:'Bachelor of Engineering'
-		},
-		{
-			id:'2',
-			name:'Master of Engineering'
-		},
-		{
-			id:'3',
-			name:'Master of Business Administration'
-		}]
+				id: '1',
+				name: 'Bachelor of Engineering'
+			},
+			{
+				id: '2',
+				name: 'Master of Engineering'
+			},
+			{
+				id: '3',
+				name: 'Master of Business Administration'
+			}
+		]
 
-		self.facultyProgramData = 'Bachelor of Engineering'
-
-		function onBackBtn() {
-			$state.go(StateConstant.FACULTY_LIST);
-		}
-
-		function cancel() {
-			$state.go(StateConstant.FACULTY_LIST);
-		}
-
-		function save() {
-			$state.go(StateConstant.FACULTY_LIST);
-		}
 	}
 
 })();

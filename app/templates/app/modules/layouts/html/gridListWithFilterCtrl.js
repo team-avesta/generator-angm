@@ -1,28 +1,40 @@
-
 /*Here Controller is kept for having working login of filter*/
-
 
 (function() {
 	'use strict';
+
 	angular
 		.module('layouts')
-		.controller('QPListController', [
-			'$state',
-			'StateConstant',
-			'$mdDialog',
-			QPListController
-		]);
+		.controller('gridFormWithFilterCtrl', controller);
 
-	function QPListController($state, StateConstant, $mdDialog) {
-		var self = this;
+	controller.$inject = [
+		'$state',
+		'StateConstant',
+		'$mdDialog',
+	];
+
+	function controller($state, StateConstant, $mdDialog) {
+		var vm = this;
 		var originatorEv;
-		self.filterButtonText;
-		self.onFilterBtn = onFilterBtn;
+		vm.isBlock = false;
+		vm.instructionFlag = false;
+		//variables
+
+		//core
+		vm.filterButtonText;
+		vm.onFilterBtn = onFilterBtn;
+
+		////////////
+		///start writing function implementations below
+
+
+		////////////////////////////// USER ID //////////////////////////////////////
+
 
 		init();
 
 		function init() {
-			self.filterButtonText = 'VIEW FILTER';
+			vm.filterButtonText = 'VIEW FILTER';
 		}
 
 		/*function openMenu($mdOpenMenu, ev) {
@@ -31,11 +43,11 @@
 		};*/
 
 		function onFilterBtn() {
-			self.is_filter_open = !self.is_filter_open;
-			self.filterButtonText = self.is_filter_open ? 'CLOSE FILTER' : 'VIEW FILTER';
+			vm.is_filter_open = !vm.is_filter_open;
+			vm.filterButtonText = vm.is_filter_open ? 'CLOSE FILTER' : 'VIEW FILTER';
 		}
 
-		self.qpData = [{
+		vm.qpData = [{
 			subject_code: '211016',
 			subject_name: 'Chemistry',
 			qp_code: '1001',
@@ -55,7 +67,7 @@
 			status: 'Rejected'
 		}]
 
-		self.subjectData = [{
+		vm.subjectData = [{
 			code: '2110003',
 			name: 'computer programming and utilization'
 		}, {

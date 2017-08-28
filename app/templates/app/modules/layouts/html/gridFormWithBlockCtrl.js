@@ -1,41 +1,56 @@
 (function() {
 	'use strict';
+
 	angular
 		.module('layouts')
-		.controller('CreateFacultyController', ['$state',
-			'StateConstant',
-			CreateFacultyController
-		]);
+		.controller('gridFormWithBlockCtrl', controller);
 
-	function CreateFacultyController($state, StateConstant) {
-		var self = this;
-		self.block_state = 'Block';
-		self.isBlock = false;
-		self.instructionFlag = false;
-		self.onBlockFaculty = onBlockFaculty;
-		self.onHelpBtn = onHelpBtn;
-		self.onCloseBtn = onCloseBtn;
+	controller.$inject = [
+		'$state',
+		'StateConstant'
+	];
+
+	function controller($state, StateConstant) {
+		var vm = this;
+		vm.block_state = 'Block';
+		vm.isBlock = false;
+		vm.instructionFlag = false;
+		//variables
+
+		//core
+		//var vm = this;
+
+		vm.onBlockFaculty = onBlockFaculty;
+		vm.onHelpBtn = onHelpBtn;
+		vm.onCloseBtn = onCloseBtn;
+
+		////////////
+		///start writing function implementations below
+
+
+		////////////////////////////// USER ID //////////////////////////////////////
+
 
 		function onBlockFaculty(block) {
 			if (block) {
-				self.block_state = 'Unblock';
+				vm.block_state = 'Unblock';
 			} else {
-				self.block_state = 'Block';
+				vm.block_state = 'Block';
 			}
 		}
 
 
 		function onHelpBtn() {
 			console.log('click');
-			self.instructionFlag = true;
+			vm.instructionFlag = true;
 		}
 
 		function onCloseBtn() {
 			console.log('click');
-			self.instructionFlag = false;
+			vm.instructionFlag = false;
 		}
 
-		self.programmeData = [{
+		vm.programmeData = [{
 				id: '1',
 				name: 'Bachelor of Engineering'
 			},
@@ -48,7 +63,6 @@
 				name: 'Master of Business Administration'
 			}
 		]
-
 	}
 
 })();

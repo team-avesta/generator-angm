@@ -1,34 +1,34 @@
 <div layout="column" flex>
-    <md-list ng-controller="sidenavCtrl as vm" ng-cloak flex>
-        <md-list-item ng-repeat="menu in vm.sidemenu" class="no-padding">
-            <a ng-if="!menu.is_accordian" class="w100p h35 no-mar" md-ink-ripple>
+	<md-list ng-controller="sidenavCtrl as vm" ng-cloak flex>
+		<md-list-item ng-repeat="menu in vm.sidemenu" class="no-padding">
+			<a ng-if="!menu.is_accordian" class="w100p h35 no-mar" md-ink-ripple>
                 <span class="menu-indicator"></span>
                 <i class="ml16 material-icons md-24 md-dark">{{menu.icon}}</i>
                 <span class="ml16 menu-text">{{menu.name}}</span>
             </a>
-            <v-accordion ng-if="menu.is_accordian" class="vAccordion--default w100p">
-                <v-pane expanded="false">
-                    <v-pane-header>
-                        <a class="w100p h35 no-mar flex-left-center">
+			<v-accordion ng-if="menu.is_accordian" class="vAccordion--default w100p">
+				<v-pane expanded="false">
+					<v-pane-header>
+						<a class="w100p h35 no-mar flex-left-center">
                             <span class="menu-indicator"></span>
                             <i class="ml16 material-icons md-24 md-dark">{{menu.icon}}</i>
                             <span class="ml16 menu-text">{{menu.name}}</span>
                         </a>
-                    </v-pane-header>
-                    <v-pane-content>
-                        <md-list-item class="no-padding submenu" ng-repeat="subMenu in menu.subMenu" ng-click="vm.selectedMenuId=subMenu.id;vm.onSelectMenu(subMenu)">
-                            <a class="w100p h35 flex-left-center" ng-class="{'menu-selected':subMenu.id === vm.selectedMenuId}" md-ink-ripple>
+					</v-pane-header>
+					<v-pane-content>
+						<md-list-item class="no-padding submenu" ng-repeat="subMenu in menu.subMenu" ng-click="vm.selectedMenuId=subMenu.id;vm.onSelectMenu(subMenu)">
+							<a class="w100p h35 flex-left-center" ng-class="{'menu-selected':subMenu.id === vm.selectedMenuId}" md-ink-ripple>
                                 <span class="menu-indicator"></span>
                                 <i class="ml25 material-icons md-24 md-dark">{{subMenu.icon}}</i>
                                 <span class="ml16 menu-text">{{subMenu.name}}</span>
                             </a>
-                        </md-list-item>
-                    </v-pane-content>
-                </v-pane>
-            </v-accordion>
-        </md-list-item>
-    </md-list>
-    <div class="sidenav-footer" style="height:50px; width:100%; border-top:1px solid #eee; padding:5px;box-sizing: border-box;">
-        Footer here
-    </div>
+						</md-list-item>
+					</v-pane-content>
+				</v-pane>
+			</v-accordion>
+		</md-list-item>
+	</md-list>
+	<div class="sidenav-footer" style="height:50px; width:100%; border-top:1px solid #eee; padding:5px;box-sizing: border-box;">
+		<p class="credit ml16"><span>&copy;</span> Footer Here</p>
+	</div>
 </div>

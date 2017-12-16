@@ -2,10 +2,10 @@
 	'use strict';
 
 	describe('validation rules test', function() {
-		var controller = null,
-			validationProvider = null,
-			expression = null,
-			$scope = null;
+		var controller = null;
+		var	validationProvider = null;
+		var	expression = null;
+		var	$scope = null;
 
 		beforeEach(function() {
 			module('agencyapp');

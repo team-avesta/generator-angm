@@ -2,18 +2,18 @@
 	'use strict';
 
 	describe('restangular Service rules test', function() {
-		var _Restangular = null,
-			_errorInterceptor = null,
-			_toastService = null,
-			_responseInterceptor = null,
-			q = null,
-			sandbox = null;
+		var _Restangular = null;
+		var	_errorInterceptor = null;
+		var	_toastService = null;
+		var	_responseInterceptor = null;
+		var	q = null;
+		var	sandbox = null;
 
 		beforeEach(function() {
 			module('agencyapp');
 		});
 
-		beforeEach(inject(function(Restangular, restangularConfigService, toastService, $q) {
+		beforeEach(inject(function(Restangular, toastService, $q) {
 			_Restangular = Restangular;
 			_toastService = toastService;
 			q = $q;

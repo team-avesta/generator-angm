@@ -4,7 +4,7 @@
     angular.module('shared')
         .factory('toastService', service);
 
-    function service($mdToast, PubSubService, eventsConstantService) {
+    function service($mdToast, pubSubService, eventsConstantService) {
 
         var last = {
             bottom: false,
@@ -28,8 +28,8 @@
         ////////////////////
 
         function init() {
-            PubSubService.subscribe(eventsConstantService.message._SHOW_SUCCESS_TOAST_MESSAGE_, ToastService.successToast);
-            PubSubService.subscribe(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, ToastService.failureToast);
+            pubSubService.subscribe(eventsConstantService.message._SHOW_SUCCESS_TOAST_MESSAGE_, ToastService.successToast);
+            pubSubService.subscribe(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, ToastService.failureToast);
         }
 
         function sanitizePosition() {
@@ -65,7 +65,7 @@
                 .content(data.message)
                 .position(ToastService.getToastPosition())
                 .hideDelay(1000)
-                .theme('success-toast')
+                .toastClass('md-success-toast-theme')
             );
         }
 
@@ -75,7 +75,7 @@
                 .content(data.message)
                 .position(ToastService.getToastPosition())
                 .hideDelay(3000)
-                .theme('failure-toast')
+               .toastClass('md-failure-toast-theme')
             );
         }
 
@@ -83,9 +83,9 @@
             $mdToast.show(
                 $mdToast.simple()
                 .content(message)
-                .position(ToastService.getToastPosition())
+                //.position(ToastService.getToastPosition())
                 .hideDelay(3000)
-                .theme('failure-toast')
+                //.theme('failure-toast')
             );
         }
 

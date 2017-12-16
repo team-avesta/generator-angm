@@ -22,7 +22,7 @@
     angular.module('shared')
         .factory('authService', service);
 
-    function service($rootScope) {
+    function service() {
         var auth = {};
 
         auth.checkPoliciesForView = function(view) {

@@ -28,7 +28,7 @@
             numberemail: function(value, scope, element, attrs, param) {
                 var email = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
                 var number = /^\d+$/;
-                if (email.test(value) || value.length == 10 && number.test(value)) {
+                if (email.test(value) || value.length === 10 && number.test(value)) {
                     return true;
                 }
                 return false;

@@ -258,6 +258,7 @@ var AngmGenerator = generators.Base.extend({
 
         // constants
         this.copy('app/modules/shared/constants/eventsConstantService.js');
+        this.copy('app/modules/shared/constants/stateConstantService.js');
         // directives
         this.copy('app/modules/shared/directives/focusMe/focusMeDirective.js');
         this.copy('app/modules/shared/directives/inputLimit/inputLimitDirective.js');
@@ -325,16 +326,16 @@ var AngmGenerator = generators.Base.extend({
         this.copy('styles/sass/font-icon.scss', 'assets/sass/font-icon.scss');
         this.copy('styles/sass/form.scss', 'assets/sass/form.scss');
         this.copy('styles/sass/grid.scss', 'assets/sass/grid.scss');
-        this.copy('styles/sass/header.scss', 'assets/sass/header.scss');
         this.copy('styles/sass/helper.scss', 'assets/sass/helper.scss');
+        this.copy('styles/sass/helper.scss', 'assets/sass/instruction.scss');
         this.copy('styles/sass/loadingSpinner.scss', 'assets/sass/loadingSpinner.scss');
         this.copy('styles/sass/login.scss', 'assets/sass/login.scss');
         this.copy('styles/sass/overwrite.scss', 'assets/sass/overwrite.scss');
         this.copy('styles/sass/sidebar.scss', 'assets/sass/sidebar.scss');
-        this.copy('styles/sass/stepper.scss', 'assets/sass/stepper.scss');
         this.copy('styles/sass/typography.scss', 'assets/sass/typography.scss');
         this.copy('styles/sass/variable.scss', 'assets/sass/variable.scss');
         this.copy('styles/sass/report-table.scss', 'assets/sass/report-table.scss');
+        this.copy('styles/sass/report-table.scss', 'assets/sass/mdToast.scss');
 
         // Copy project files
         //this.copy('Gruntfile.js');

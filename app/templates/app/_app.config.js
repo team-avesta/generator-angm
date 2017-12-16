@@ -6,9 +6,21 @@
         .config(configure)
         .run(runBlock);
 
-    configure.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider'];
+    configure.$inject = ['$urlRouterProvider', '$locationProvider', '$httpProvider', '$mdAriaProvider', '$mdThemingProvider'];
 
-    function configure($urlRouterProvider, $locationProvider, $httpProvider) {
+    function configure($urlRouterProvider, $locationProvider, $httpProvider,  $mdAriaProvider, $mdThemingProvider) {
+        $mdAriaProvider.disableWarnings();
+		$mdThemingProvider.theme('default')
+			.primaryPalette('light-blue', {
+				'default': '600',
+			})
+			.accentPalette('green', {
+				'default': '500',
+				/*'hue-1': '400', // use shade 100 for the <code>md-hue-1</code> class
+				'hue-2': '500', // use shade 600 for the <code>md-hue-2</code> class
+				'hue-3': '600' //*/
+			});
+
         $locationProvider.hashPrefix('!');
 
         // This is required for Browser Sync to work poperly

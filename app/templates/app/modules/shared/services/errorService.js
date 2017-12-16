@@ -4,7 +4,7 @@
         .module('shared')
         .factory('errorService', service);
 
-    function service(PubSubService, eventsConstantService, $rootScope) {
+    function service(pubSubService, eventsConstantService, $rootScope) {
         var errorMessages = {};
 
         var errors = {
@@ -18,7 +18,7 @@
 
         function init() {
             errorMessages = {};
-            PubSubService.subscribe(eventsConstantService.message._ADD_ERROR_MESSAGE_, errors.addErrorMessageHandler);
+            pubSubService.subscribe(eventsConstantService.message._ADD_ERROR_MESSAGE_, errors.addErrorMessageHandler);
         }
 
         function addErrorMessageHandler(data) {
@@ -36,23 +36,23 @@
             switch (type) {
                 case 'toast':
                     {
-                        //PubSubService.publish(eventsConstantService.message._DISPLAY_POPUP_, [messageText]);
-                        PubSubService.publish(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, [{
+                        //pubSubService.publish(eventsConstantService.message._DISPLAY_POPUP_, [messageText]);
+                        pubSubService.publish(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, [{
                             message: errorMessages
                         }]);
                         break;
                     }
                 case 'dialog':
                     {
-                        //PubSubService.publish(eventsConstantService.message._DISPLAY_CONFIRMATION_DIALOG_, [messageText]);
-                        PubSubService.publish(eventsConstantService.message._SHOW_FAILURE_DIALOG_MESSAGE_, [{
+                        //pubSubService.publish(eventsConstantService.message._DISPLAY_CONFIRMATION_DIALOG_, [messageText]);
+                        pubSubService.publish(eventsConstantService.message._SHOW_FAILURE_DIALOG_MESSAGE_, [{
                             message: errorMessages
                         }]);
                         break;
                     }
                 default:
                     {
-                        PubSubService.publish(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, [{
+                        pubSubService.publish(eventsConstantService.message._SHOW_FAILURE_TOAST_MESSAGE_, [{
                             message: errorMessages
                         }]);
                         break;

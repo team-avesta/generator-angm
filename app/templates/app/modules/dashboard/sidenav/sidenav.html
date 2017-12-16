@@ -1,34 +1,43 @@
-<div layout="column" flex>
-	<md-list ng-controller="sidenavCtrl as vm" ng-cloak flex>
-		<md-list-item ng-repeat="menu in vm.sidemenu" class="no-padding">
-			<a ng-if="!menu.is_accordian" class="w100p h35 no-mar" md-ink-ripple>
-                <span class="menu-indicator"></span>
-                <i class="ml16 material-icons md-24 md-dark">{{menu.icon}}</i>
-                <span class="ml16 menu-text">{{menu.name}}</span>
-            </a>
-			<v-accordion ng-if="menu.is_accordian" class="vAccordion--default w100p">
-				<v-pane expanded="false">
-					<v-pane-header>
-						<a class="w100p h35 no-mar flex-left-center">
-                            <span class="menu-indicator"></span>
-                            <i class="ml16 material-icons md-24 md-dark">{{menu.icon}}</i>
-                            <span class="ml16 menu-text">{{menu.name}}</span>
-                        </a>
-					</v-pane-header>
-					<v-pane-content>
-						<md-list-item class="no-padding submenu" ng-repeat="subMenu in menu.subMenu" ng-click="vm.selectedMenuId=subMenu.id;vm.onSelectMenu(subMenu)">
-							<a class="w100p h35 flex-left-center" ng-class="{'menu-selected':subMenu.id === vm.selectedMenuId}" md-ink-ripple>
-                                <span class="menu-indicator"></span>
-                                <i class="ml25 material-icons md-24 md-dark">{{subMenu.icon}}</i>
-                                <span class="ml16 menu-text">{{subMenu.name}}</span>
-                            </a>
-						</md-list-item>
-					</v-pane-content>
-				</v-pane>
-			</v-accordion>
-		</md-list-item>
-	</md-list>
+<div layout="column" flex ng-cloak ng-controller="sidenavCtrl as vm" md-whiteframe="1">
+	<div class="pos-rel overflow-a" flex>
+		<md-list flex class="menu-end-border">
+			<md-list-item ng-repeat="menu in vm.sidemenu" ng-click="vm.selectedMenuId=menu.id;vm.onSelectMenu(menu)" class="no-padding md-exclude">
+				<a ng-if="!menu.is_accordian" class="w100p h48 no-mar flex-left-center pointer" md-ink-ripple ng-class="{'menu-selected':menu.id === vm.selectedMenuId}">
+       				 <span class="menu-indicator"></span>
+        			<i style="width:24px; height:24px;" class="ml16 material-icons md-24 md-dark">{{menu.icon}}</i>
+        			<span class="ml16 menu-text">{{menu.name}}</span>
+      			</a>
+				<v-accordion ng-if="menu.is_accordian" class="vAccordion--default w100p">
+					<v-pane>
+						<v-pane-header>
+							<a class="w100p h48 no-mar flex-left-center">
+              					<span class="menu-indicator"></span>
+              					<i class="ml16 material-icons md-24 md-dark">{{menu.icon}}</i>
+              					<span class="ml16 menu-text">{{menu.name}}</span>
+            				</a>
+						</v-pane-header>
+						<v-pane-content>
+							<md-list-item class="no-padding" ng-repeat="subMenu in menu.sub_menu" ng-click="vm.selectedMenuId=subMenu.id;vm.onSelectMenu(subMenu)">
+								<a class="w100p h48 flex-left-center" ng-class="{'menu-selected':subMenu.id === vm.selectedMenuId}" md-ink-ripple>
+                					<span class="menu-indicator"></span>
+                					<i class="ml25 material-icons md-24 md-dark">{{subMenu.icon}}</i>
+                					<span class="ml16 menu-text">{{subMenu.name}}</span>
+              					</a>
+							</md-list-item>
+						</v-pane-content>
+					</v-pane>
+				</v-accordion>
+			</md-list-item>
+		</md-list>
+		<!-- skeleton-screen div
+		<div layout="column" flex class="sidebar-skeleton-container" ng-hide="vm.sidemenu.length !== 0">
+			<div layout="row" layout-align="start center" class="menu-skeleton-container" ng-repeat="n in [1,2,3,4,5]">
+				<div class="icon-container"></div>
+				<div class="text-container"></div>
+			</div>
+		</div> -->
+	</div>
 	<div class="sidenav-footer" style="height:50px; width:100%; border-top:1px solid #eee; padding:5px;box-sizing: border-box;">
-		<p class="credit ml16"><span>&copy;</span> Footer Here</p>
+		<p class="credit ml16"><span>&copy;</span> 2016 Shree Group</p>
 	</div>
 </div>

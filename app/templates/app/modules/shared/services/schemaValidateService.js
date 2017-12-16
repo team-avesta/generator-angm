@@ -29,7 +29,7 @@ function service($injector) {
 				validations = schema[key].validations.split(",");
 
 				validations.forEach(function(val) {
-					if (val.indexOf('=') != -1) {
+					if (val.indexOf('=') !== -1) {
 						param = val.split('=')[1];
 						val = val.split('=')[0];
 					}

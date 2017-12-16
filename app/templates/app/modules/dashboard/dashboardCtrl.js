@@ -12,6 +12,11 @@
 		vm.title = "Hello, dashboard!";
 		vm.version = "1.0.0";
 		vm.listFeatures = dashboardService.getFeaturesList();
+		vm.onLogout = onLogout;
+
+		function onLogout() {
+			$state.go(stateConstantService.LOGIN);
+		}
 
 	}
 

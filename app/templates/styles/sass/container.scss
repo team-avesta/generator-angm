@@ -1,16 +1,13 @@
 @import 'variable';
-.outer-wrapper {
-    margin: 0;
-    width: 100%;
-    min-height: calc(100% - 128px);
-    height: calc(100% - 128px);
+
+
+.app-container {
+	//padding: 8px;
+	background-color: $appbg;
 }
 
-.main-container-bg {
-    background-color: $offwhite;
-}
 
-.app-title {
+/* .app-title {
     font-family: robotobold;
     font-size: 24px !important;
     cursor: pointer;
@@ -89,7 +86,7 @@
 }
 
 
-/* scrollbar styles */
+
 
 .scrollbar {
     overflow-y: auto;
@@ -179,7 +176,7 @@
 }
 
 
-/* course page */
+
 
 .course-name > figure {
     justify-content: flex-start;
@@ -192,9 +189,6 @@
 }
 
 
-/* otp */
-
-/* Otp container */
 
 #otpContainer {
   width: 320px;
@@ -206,7 +200,7 @@
 }
 
 
-/* username */
+
 
 .username-text {
     font-family: robotobold;
@@ -219,6 +213,6 @@
 }
 
 .register-container {
-      //width: 850px;
       width: 700px;
   }
+ */

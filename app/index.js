@@ -298,23 +298,12 @@ var AngmGenerator = generators.Base.extend({
         this.copy('styles/fonts/materialicon/MaterialIcons-Regular.ttf', 'assets/fonts/materialicon/MaterialIcons-Regular.ttf');
         this.copy('styles/fonts/materialicon/MaterialIcons-Regular.woff', 'assets/fonts/materialicon/MaterialIcons-Regular.woff');
         this.copy('styles/fonts/materialicon/MaterialIcons-Regular.woff2', 'assets/fonts/materialicon/MaterialIcons-Regular.woff2');
-        this.copy('styles/fonts/roboto/Roboto-Bold.eot', 'assets/fonts/roboto/Roboto-Bold.eot');
-        this.copy('styles/fonts/roboto/Roboto-Bold.ttf', 'assets/fonts/roboto/Roboto-Bold.ttf');
         this.copy('styles/fonts/roboto/Roboto-Bold.woff', 'assets/fonts/roboto/Roboto-Bold.woff');
         this.copy('styles/fonts/roboto/Roboto-Bold.woff2', 'assets/fonts/roboto/Roboto-Bold.woff2');
-        this.copy('styles/fonts/roboto/Roboto-Light.eot', 'assets/fonts/roboto/Roboto-Light.eot');
-        this.copy('styles/fonts/roboto/Roboto-Light.ttf', 'assets/fonts/roboto/Roboto-Light.ttf');
         this.copy('styles/fonts/roboto/Roboto-Light.woff', 'assets/fonts/roboto/Roboto-Light.woff');
         this.copy('styles/fonts/roboto/Roboto-Light.woff2', 'assets/fonts/roboto/Roboto-Light.woff2');
-        this.copy('styles/fonts/roboto/Roboto-LightItalic.eot', 'assets/fonts/roboto/Roboto-LightItalic.eot');
-        this.copy('styles/fonts/roboto/Roboto-LightItalic.ttf', 'assets/fonts/roboto/Roboto-LightItalic.ttf');
-        this.copy('styles/fonts/roboto/Roboto-LightItalic.woff', 'assets/fonts/roboto/Roboto-LightItalic.woff');
-        this.copy('styles/fonts/roboto/Roboto-Medium.eot', 'assets/fonts/roboto/Roboto-Medium.eot');
-        this.copy('styles/fonts/roboto/Roboto-Medium.ttf', 'assets/fonts/roboto/Roboto-Medium.ttf');
         this.copy('styles/fonts/roboto/Roboto-Medium.woff', 'assets/fonts/roboto/Roboto-Medium.woff');
         this.copy('styles/fonts/roboto/Roboto-Medium.woff2', 'assets/fonts/roboto/Roboto-Medium.woff2');
-        this.copy('styles/fonts/roboto/Roboto-Regular.eot', 'assets/fonts/roboto/Roboto-Regular.eot');
-        this.copy('styles/fonts/roboto/Roboto-Regular.ttf', 'assets/fonts/roboto/Roboto-Regular.ttf');
         this.copy('styles/fonts/roboto/Roboto-Regular.woff', 'assets/fonts/roboto/Roboto-Regular.woff');
         this.copy('styles/fonts/roboto/Roboto-Regular.woff2', 'assets/fonts/roboto/Roboto-Regular.woff2');
 
@@ -322,20 +311,18 @@ var AngmGenerator = generators.Base.extend({
         this.copy('styles/sass/accordian.scss', 'assets/sass/accordian.scss');
         this.copy('styles/sass/application.scss', 'assets/sass/application.scss');
         this.copy('styles/sass/container.scss', 'assets/sass/container.scss');
-        this.copy('styles/sass/dataTable.scss', 'assets/sass/dataTable.scss');
         this.copy('styles/sass/font-icon.scss', 'assets/sass/font-icon.scss');
-        this.copy('styles/sass/form.scss', 'assets/sass/form.scss');
-        this.copy('styles/sass/grid.scss', 'assets/sass/grid.scss');
+        this.copy('styles/sass/grid-form.scss', 'assets/sass/grid-form.scss');
         this.copy('styles/sass/helper.scss', 'assets/sass/helper.scss');
-        this.copy('styles/sass/helper.scss', 'assets/sass/instruction.scss');
-        this.copy('styles/sass/loadingSpinner.scss', 'assets/sass/loadingSpinner.scss');
+        this.copy('styles/sass/instruction.scss', 'assets/sass/instruction.scss');
+        this.copy('styles/sass/loading-spinner.scss', 'assets/sass/loading-spinner.scss');
         this.copy('styles/sass/login.scss', 'assets/sass/login.scss');
         this.copy('styles/sass/overwrite.scss', 'assets/sass/overwrite.scss');
         this.copy('styles/sass/sidebar.scss', 'assets/sass/sidebar.scss');
         this.copy('styles/sass/typography.scss', 'assets/sass/typography.scss');
         this.copy('styles/sass/variable.scss', 'assets/sass/variable.scss');
         this.copy('styles/sass/report-table.scss', 'assets/sass/report-table.scss');
-        this.copy('styles/sass/report-table.scss', 'assets/sass/mdToast.scss');
+        this.copy('styles/sass/toast.scss', 'assets/sass/toast.scss');
 
         // Copy project files
         //this.copy('Gruntfile.js');

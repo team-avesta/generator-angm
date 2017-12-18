@@ -1,0 +1,9 @@
+@import 'variable';
+
+md-toast.md-success-toast-theme {
+    background-color: $toast-success;
+}
+
+md-toast.md-failure-toast-theme {
+    background-color: $toast-failure;
+}

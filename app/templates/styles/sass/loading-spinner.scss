@@ -1,3 +1,5 @@
+@import 'variable';
+
 .loading-container {
     position: absolute;
     top: 0;
@@ -7,7 +9,7 @@
     .loading-mask {
         height: 100%;
         width: 100%;
-        background-color: white;
+        background-color: $peace;
         opacity: 0.8;
         display: flex;
         justify-content: center;

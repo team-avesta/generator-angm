@@ -1,27 +1,27 @@
 @import "variable";
 
-.vAccordion--default v-pane-content>div {
+.vAccordion--menu v-pane-content>div {
 	padding-bottom: 0 !important;
 }
 
-.vAccordion--default v-pane.is-expanded>v-pane-header {
-	border-bottom-color: $accent_dark !important;
+.vAccordion--menu v-pane.is-expanded>v-pane-header {
+	border-bottom-color: $accent !important;
 }
 
-.vAccordion--default v-pane-header {
+.vAccordion--menu v-pane-header {
 	margin-bottom: 0 !important;
 	border-bottom: none !important;
 }
 
-.vAccordion--default v-pane-header::after,
-.vAccordion--default v-pane-header::before {
+.vAccordion--menu v-pane-header::after,
+.vAccordion--menu v-pane-header::before {
 	right: 10px !important;
-	background-color: $accent_dark !important;
+	background-color: $accent !important;
 }
 
-.vAccordion--default v-pane-header:hover,
-.vAccordion--default v-pane-header:focus {
-	color: $accent_dark !important;
+.vAccordion--menu v-pane-header:hover,
+.vAccordion--menu v-pane-header:focus {
+	color: $accent !important;
 }
 
 

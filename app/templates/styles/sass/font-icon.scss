@@ -34,16 +34,8 @@
     color: $avesta;
 }
 
-.material-icons.md-form {
-    color: $iris;
-}
-
-.material-icons.md-pearly {
-    color: $concrete;
-}
-
 .material-icons.md-accent {
-    color: $accent_dark;
+    color: $accent;
 }
 
 .material-icons.md-primary {
@@ -54,16 +46,11 @@
     color: $peace;
 }
 
-.material-icons.md-concrete {
-    color: $concrete !important;
-}
-
 
 /* Rules for using icons as black on a light background. */
 
 .material-icons.md-dark {
-    //color: $md-dark;
-    color: $concrete;
+    color: $md-dark;
 }
 
 .material-icons.md-dark.md-inactive {
@@ -79,121 +66,4 @@
 
 .material-icons.md-light.md-inactive {
     color: $md-light-inactive;
-}
-
-
-/* rules for svg icons */
-
-md-icon.md-alert {
-    svg {
-        fill: $pomegrante;
-    }
-}
-
-md-icon.md-confirm {
-    svg {
-        fill: $emerland;
-    }
-}
-
-md-icon.md-warning {
-    svg {
-        fill: $carrot;
-    }
-}
-
-md-icon.md-wait {
-    svg {
-        fill: $sea;
-    }
-}
-
-md-icon.md-asbestos {
-    svg {
-        fill: $asbestos;
-    }
-}
-
-md-icon.md-end {
-    svg {
-        fill: $choclate;
-    }
-}
-
-md-icon.md-form {
-    svg {
-        fill: $iris;
-    }
-}
-
-md-icon.md-start {
-    svg {
-        fill: $turquoise;
-    }
-}
-
-md-icon.md-pearly {
-    svg {
-        fill: $concrete;
-    }
-}
-
-md-icon.md-accent {
-    svg {
-        fill: $carrot;
-    }
-}
-
-
-/* Rules for using icons as black on a light backgroundmd-icon. */
-
-md-icon.md-dark {
-    svg {
-        fill: $md-dark;
-    }
-}
-
-md-icon.md-dark-inactive {
-    svg {
-        fill: $md-dark-inactive;
-    }
-}
-
-
-/* Rules for using icons as white on a dark background. */
-
-md-icon.md-light {
-    svg {
-        fill: $md-light;
-    }
-}
-
-md-icon.md-light-inactive {
-    svg {
-        fill: $md-light-inactive;
-    }
-}
-
-
-md-icon.md-accent {
-  svg{
-    fill: $carrot;
-  }
-}
-
-md-icon.md-primary {
-  svg{
-    fill: $indigo;
-  }
-}
-
-md-icon.md-disabled {
-    svg {
-        fill: $disabled;
-    }
-}
-
-.md-svg-18 {
-    width: 18px !important;
-    height: 18px !important;
 }

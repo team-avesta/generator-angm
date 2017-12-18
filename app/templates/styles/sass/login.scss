@@ -1,6 +1,7 @@
 @import "variable";
+
+
 .login {
-	//background-image: url(../assets/images/loginbg.png);
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -28,7 +29,6 @@
 }
 
 .registration {
-	//background-image: url(../assets/images/loginbg.png);
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -55,28 +55,3 @@
 	}
 }
 
-.contact-container {
-	width: 650px;
-	padding: 16px;
-	box-sizing: border-box;
-	.contact-text {
-		font-family: robotoregular;
-		font-size: 12px;
-		color: #777777;
-		letter-spacing: 0.05em;
-	}
-}
-
-.contact-container {
-	width: 650px;
-	padding: 16px;
-	position: relative;
-	z-index: 1;
-	box-sizing: border-box;
-	.contact-text {
-		font-family: robotoregular;
-		font-size: 12px;
-		color: #777777;
-		letter-spacing: 0.05em;
-	}
-}

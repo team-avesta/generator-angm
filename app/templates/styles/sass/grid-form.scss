@@ -1,4 +1,55 @@
 @import "variable";
+
+.grid {
+  .grid-title {
+    font-size: 19px;
+  }
+  .grid-subtitle {
+    font-size: 16px;
+  }
+  .font-400 {
+    font-weight: 400;
+  }
+  .font-600 {
+    font-family: robotobold;
+  }
+  .grid-tagline {
+    font-size: 14px;
+    padding: 0 8px;
+    color: $dull;
+    font-family: robotomedium;
+  }
+}
+
+
+div.upload {
+  width: 157px;
+  height: 36px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgb(255, 145, 0);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border-radius: 3px;
+  cursor: pointer !important;
+  .upload-btn-container {
+    width: inherit;
+    height: inherit;
+    background-color: $carrot;
+    color: $smokyblack;
+    border: none;
+    overflow: hidden;
+    shadow: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+div.upload.disabledBtn {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+
 .verified-text,
 .active-text,
 .passgreen {
@@ -18,29 +69,6 @@
 .failred {
   color: $blush !important;
   text-transform: uppercase !important;
-}
-
-.grid-btn {
-  width: 75px !important;
-  height: 75px !important;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: 5;
-}
-
-.calllist-checkbox {
-  color: $peace;
-  margin-bottom: 0 !important;
-  .md-icon {
-    border-color: $peace !important;
-  }
-}
-
-.del-icon-btn {
-  margin: 0 !important;
-  padding: 0 !important;
-  min-width: 44px !important;
 }
 
 .rightalignicons {
@@ -70,12 +98,8 @@
   top: 48px;
 }
 
-.grid-action-text-button {
-  font-size: 12px !important;
-  margin: 0 !important;
-}
 
-.list-hover {
+/* .list-hover {
   border-bottom: 1px solid $asbestos;
   &:first-child {
     border-top: 1px solid $asbestos;
@@ -88,32 +112,11 @@
   }
 }
 
-.terms-list {
-  &:first-child {
-    background-color: $offwhite;
-  }
-}
-
-.programme-list {
-  &:first-child {
-    background-color: $offwhite;
-  }
-}
-
-.faculty-list {
-  &:first-child {
-    background-color: $offwhite;
-  }
-}
-
 .selected-list {
   &:first-child {
     background-color: $offwhite;
   }
-}
+} */
 
-.examsession-date {
-  .md-datepicker-input-container {
-    width: 50%;
-  }
-}
+
+

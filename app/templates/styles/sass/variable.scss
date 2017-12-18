@@ -1,17 +1,28 @@
-/* color variables */
+$curve: 5px;
+$round: 50%;
+
+$base_padding: 8px;
+$base_margin: 8px;
+$double_padding: 2 * $base_padding;
+$double_margin: 2 * $base_margin;
 
 
-/* font-icon dark - light theme */
+$bold-font: 'robotobold';
+$medium-font: 'robotomedium';
+$regular-font: 'robotoregular';
+$light-font: 'robotolight';
 
-//$md-dark: rgba(0, 0, 0, 0.54);
 $md-dark: #222222;
 $md-dark-inactive: rgba(0, 0, 0, 0.26);
 $md-light: rgba(255, 255, 255, 1);
 $md-light-inactive: rgba(255, 255, 255, 0.3);
 
+$toast-success: #4CAF50;
+$toast-failure: #F44336;
+
 /* colors */
 
-$appbg: #F5EEE3;
+$appbg: #DCDCDC;
 $peace: #FFFFFF;
 $cloud: #E0E0E0;
 $offwhite: #E0F2F1;
@@ -42,7 +53,7 @@ $filterbg: #FAFAFA;
 $disabled: rgba(0, 0, 0, 0.26);
 
 $primary: #039BE5;
-$accent_dark: #4CAF50;
+$accent: #4CAF50;
 
 
 // scrollbar color

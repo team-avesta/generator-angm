@@ -1,44 +1,39 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular.module('layouts')
-        .config(route);
+	angular.module('layouts')
+		.config(route);
 
-    route.$inject = ['$stateProvider'];
+	route.$inject = ['$stateProvider', 'stateConstantService'];
 
-    function route($stateProvider) {
+	function route($stateProvider, stateConstantService) {
 
-        $stateProvider
-            .state('dashboard.layouts', {
-                url: '/layouts',
-                templateUrl: 'app/modules/layouts/layouts.html',
-                controller: 'layoutsCtrl',
-                controllerAs: 'vm'
-            }).state('dashboard.layouts.1column', {
-                url: '/1column',
-                templateUrl: 'app/modules/layouts/html/1Column.html',
-                controller: 'layoutsCtrl',
-                controllerAs: 'vm'
-            }).state('dashboard.layouts.2column', {
-                url: '/2column',
-                templateUrl: 'app/modules/layouts/html/1Column.html',
-                controller: 'layoutsCtrl',
-                controllerAs: 'vm'
-            }).state('dashboard.layouts.3column', {
-                url: '/3column',
-                templateUrl: 'app/modules/layouts/html/1Column.html',
-                controller: 'layoutsCtrl',
-                controllerAs: 'vm'
-            }).state('dashboard.layouts.horcenter', {
-                url: '/horcenter',
-                templateUrl: 'app/modules/layouts/html/1Column.html',
-                controller: 'layoutsCtrl',
-                controllerAs: 'vm'
-            }).state('dashboard.layouts.vercenter', {
-                url: '/vercenter',
-                templateUrl: 'app/modules/layouts/html/1Column.html',
-                controller: 'layoutsCtrl',
-                controllerAs: 'vm'
-            });
-    }
+		$stateProvider
+			.state(stateConstantService.TWO_COLUMN, {
+				url: '/twoColumn',
+				templateUrl: 'app/modules/layouts/2columnInvite.html'
+			})
+			.state(stateConstantService.DIALOG, {
+				url: '/dialog',
+				templateUrl: 'app/modules/layouts/dialog.html',
+				controller: 'dialogCtrl',
+				controllerAs: 'vm'
+			})
+			.state(stateConstantService.GRID, {
+				url: '/grid',
+				templateUrl: 'app/modules/layouts/grid.html',
+				controller: 'gridCtrl',
+				controllerAs: 'vm'
+			})
+			.state(stateConstantService.FORM, {
+				url: '/form',
+				templateUrl: 'app/modules/layouts/form.html',
+				controller: 'formCtrl',
+				controllerAs: 'vm'
+			})
+			.state(stateConstantService.TAB, {
+				url: '/tab',
+				templateUrl: 'app/modules/layouts/tab.html'
+			});
+	}
 })();

@@ -4,9 +4,10 @@
     angular.module('dashboard')
         .config(route);
 
-    route.$inject = ['$stateProvider'];
+    route.$inject = ['$stateProvider', 'stateConstantService'];
 
-    function route($stateProvider) {
+    function route($stateProvider, stateConstantService) {
+
         $stateProvider
             <% if (angularMaterial) { %>
             .state('dashboard', {
@@ -22,11 +23,9 @@
                 templateUrl: 'app/modules/dashboard/home.html'
             });
         <% } else { %>
-        .state('home', {
+        .state(stateConstantService.HOME, {
             url: '/',
             templateUrl: 'app/modules/home/home.html',
-            controller: 'HomeCtrl',
-            controllerAs: 'vm'
         });
         <% } %>
     }

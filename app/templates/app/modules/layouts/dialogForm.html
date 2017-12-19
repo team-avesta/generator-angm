@@ -1,0 +1,25 @@
+<md-dialog style="min-width:550px; min-height: 85%;">
+	<form ng-cloak name="subQuestionForm">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Dialog Form</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="vm.onClose()">
+					<i class="material-icons md-concrete">close</i>
+				</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content style="height: calc(100vh - 112px);" layout-align="center center" layout="column">
+			<p>Put you fancy content here.</p>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<span flex></span>
+			<md-button class="md-button md-accent" ng-click="vm.onCancel()">
+				Cancel
+			</md-button>
+			<md-button class="md-button md-accent md-raised" ng-click="vm.onSave()">
+				Save
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

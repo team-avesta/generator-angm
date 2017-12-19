@@ -275,20 +275,22 @@ var AngmGenerator = generators.Base.extend({
 
         //copy layout module files
         this.copy('app/modules/layouts/layouts.module.js');
-        this.copy('app/modules/layouts/layoutsCtrl.js');
         this.copy('app/modules/layouts/layoutsRoute.js');
-        this.copy('app/modules/layouts/layoutsService.js');
-        this.copy('app/modules/layouts/layouts.html');
-        this.copy('app/modules/layouts/html/2columnInvite.html');
-        this.copy('app/modules/layouts/html/dialog.html');
-        this.copy('app/modules/layouts/html/gridFormWithBlock.html');
-        this.copy('app/modules/layouts/html/gridListWithFilter.html');
-        this.copy('app/modules/layouts/html/login.html');
-        this.copy('app/modules/layouts/html/otp.html');
-        this.copy('app/modules/layouts/html/registration.html');
-        this.copy('app/modules/layouts/html/reportTable.html');
-        this.copy('app/modules/layouts/html/gridFormWithBlockCtrl.js');
-		this.copy('app/modules/layouts/html/gridListWithFilterCtrl.js');
+        this.copy('app/modules/layouts/2columnInvite.html');
+        this.copy('app/modules/layouts/dialog.html');
+        this.copy('app/modules/layouts/dialogCtrl.js');
+        this.copy('app/modules/layouts/dialogForm.html');
+        this.copy('app/modules/layouts/dialogFormCtrl.js');
+        this.copy('app/modules/layouts/grid.html');
+        this.copy('app/modules/layouts/gridCtrl.js');
+        this.copy('app/modules/layouts/form.html');
+        this.copy('app/modules/layouts/tab.html');
+        this.copy('app/modules/layouts/formCtrl.js');
+        this.copy('app/modules/layouts/login.html');
+        this.copy('app/modules/layouts/otp.html');
+        this.copy('app/modules/layouts/registration.html');
+        this.copy('app/modules/layouts/reportTable.html');
+
 
 
         //copy gitignore files
@@ -306,6 +308,8 @@ var AngmGenerator = generators.Base.extend({
         this.copy('styles/fonts/roboto/Roboto-Medium.woff2', 'assets/fonts/roboto/Roboto-Medium.woff2');
         this.copy('styles/fonts/roboto/Roboto-Regular.woff', 'assets/fonts/roboto/Roboto-Regular.woff');
         this.copy('styles/fonts/roboto/Roboto-Regular.woff2', 'assets/fonts/roboto/Roboto-Regular.woff2');
+        this.copy('styles/fonts/roboto/roboto-italic.woff', 'assets/fonts/roboto/roboto-italic.woff');
+        this.copy('styles/fonts/roboto/roboto-italic.woff2', 'assets/fonts/roboto/roboto-italic.woff2');
 
         // Copy Sass files
         this.copy('styles/sass/accordian.scss', 'assets/sass/accordian.scss');

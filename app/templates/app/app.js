@@ -23,9 +23,9 @@
         <% } if (angularSanitize) { %>'ngSanitize',
         <% } %>'ui.router',*/
         'vendor',
-        'layouts',
         'shared',
         'dashboard',
+        'layouts'
     ]);
 
 })();

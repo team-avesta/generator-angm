@@ -1,4 +1,4 @@
-<div layout="column" flex ng-cloak ng-controller="sidenavCtrl as vm" md-whiteframe="1">
+<div layout="column" layout-fill ng-cloak ng-controller="sidenavCtrl as vm" md-whiteframe="1">
 	<div class="pos-rel overflow-a" flex>
 		<md-list flex class="menu-end-border">
 			<md-list-item ng-repeat="menu in vm.sidemenu" ng-click="vm.selectedMenuId=menu.id;vm.onSelectMenu(menu)" class="no-padding md-exclude">
@@ -7,7 +7,7 @@
         			<i style="width:24px; height:24px;" class="has-l-dbl-mar material-icons md-24 md-dark">{{menu.icon}}</i>
         			<span class="has-l-dbl-mar menu-text">{{menu.name}}</span>
       			</a>
-				<v-accordion ng-if="menu.is_accordian" class="vAccordion--menu w100p">
+				<v-accordion ng-if="menu.is_accordian" class="vAccordion--default w100p">
 					<v-pane>
 						<v-pane-header>
 							<a class="w100p h48 no-mar flex-left-center">
@@ -20,7 +20,7 @@
 							<md-list-item class="no-padding" ng-repeat="subMenu in menu.sub_menu" ng-click="vm.selectedMenuId=subMenu.id;vm.onSelectMenu(subMenu)">
 								<a class="w100p h48 flex-left-center" ng-class="{'menu-selected':subMenu.id === vm.selectedMenuId}" md-ink-ripple>
                 					<span class="menu-indicator"></span>
-                					<i class="ml25 material-icons md-24 md-dark">{{subMenu.icon}}</i>
+                					<i class="submenu-icon material-icons md-24 md-dark">{{subMenu.icon}}</i>
                 					<span class="has-l-dbl-mar menu-text">{{subMenu.name}}</span>
               					</a>
 							</md-list-item>
@@ -37,7 +37,7 @@
 			</div>
 		</div> -->
 	</div>
-	<div class="sidenav-footer" style="">
+	<div class="sidenav-footer">
 		<p class="credit has-l-dbl-mar"><span>&copy;</span> 2016 Shree Group</p>
 	</div>
 </div>

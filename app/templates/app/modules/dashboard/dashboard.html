@@ -1,14 +1,12 @@
 <div layout="column" layout-fill>
-  <!-- header start -->
-    <div ng-include="'app/modules/dashboard/header/header.html'"></div>
-  <!-- header end -->
-  <div layout="row" flex>
-  <!-- sidenav starts -->
-    <div class="sidebar-container" layout="row">
-      <div ng-include="'app/modules/dashboard/sidenav/sidenav.html'" flex layout="row"></div>
-    </div>
-    <!-- sidenav end -->
-    <!-- home / views -->
-    <md-content flex md-scroll-y class="app-container" ui-view></md-content>
-  </div>
+	<!-- header start -->
+	<div ng-include="'app/modules/dashboard/header/header.html'"></div>
+	<!-- header end -->
+	<div layout="row" flex>
+		<!-- sidenav starts -->
+		<div class="sidebar-container" ng-include="'app/modules/dashboard/sidenav/sidenav.html'" flex></div>
+		<!-- sidenav end -->
+		<!-- home / views -->
+		<md-content flex md-scroll-y class="app-container" ui-view></md-content>
+	</div>
 </div>

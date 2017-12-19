@@ -4,20 +4,14 @@
   .grid-title {
     font-size: 19px;
   }
-  .grid-subtitle {
-    font-size: 16px;
-  }
-  .font-400 {
-    font-weight: 400;
-  }
   .font-600 {
-    font-family: robotobold;
+    font-family: $bold-font;
   }
   .grid-tagline {
     font-size: 14px;
     padding: 0 8px;
     color: $dull;
-    font-family: robotomedium;
+    font-family: $medium-font;
   }
 }
 

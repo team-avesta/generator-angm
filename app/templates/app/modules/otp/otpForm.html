@@ -1,0 +1,20 @@
+<div class="whitebg pos-rel grid w100p" layout="column">
+	<p class="grid-minititle lh-15">One Time Password (OTP) has been sent to your <strong>{{vm.showDisplayMessage}}</strong> registered with <strong>User Id {{vm.showDisplayUserId}}</strong>, please enter the same here to verify it.</p>
+	<p class="grid-subtitle">Enter OTP</p>
+	<form name="otpFrom">
+		<div layout="column" layout-align="center center">
+			<md-input-container class="w100p">
+				<label>OTP</label>
+				<input autocomplete="off" focus-me-directive name="otp" type="number" ng-keyup="$event.keyCode === 13 ? vm.onVerifyOTP() : null" ng-model="vm.otp">
+			</md-input-container>
+			<div layout="row" layout-align="center center">
+				<md-button class="md-accent" ng-show="!vm.disableResend" ng-click="vm.resendOTP()">Resend OTP</md-button>
+				<!-- <p ng-hide="!vm.disableResend">{{vm.hour}}:{{vm.min}}</p> -->
+				<timer class="has-lr-dbl-mar" ng-hide="!vm.disableResend" countdown="120" interval="1000" max-time-unit="'minute'">{{mminutes}}:{{sseconds}}</timer>
+				<!-- <md-button class="md-raised md-accent" ng-disabled="!ctrl.otp" ng-click="ctrl.verifyOTP($event)">Verify</md-button> -->
+				<md-button class="md-raised md-accent" ng-disabled="!otpFrom.$valid" ng-click="vm.onVerifyOTP()">Verify</md-button>
+			</div>
+		</div>
+	</form>
+	<p class="grid-minititle lh-15">If you didn't receive your OTP within 2 minutes, click the <strong>RESEND OTP</strong> button to resend OTP.</p>
+</div>

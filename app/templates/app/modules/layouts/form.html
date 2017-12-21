@@ -1,114 +1,111 @@
 <div layout-fill layout="column" class="grid">
 	<md-card flex>
 		<div layout="row" class="h48" layout-align="start center">
-			<div layout-padding flex class="grid-title font-600">Form</div>
+			<div layout-padding flex class="grid-title">Form</div>
 			<md-button class="md-button md-accent" ng-click="vm.onInstruction()">
-			INSTRUCTIONS
-		</md-button>
+				INSTRUCTIONS
+			</md-button>
 		</div>
 		<md-content flex>
 			<div layout="column" class="has-pad">
-			<md-input-container>
-				<label>Select Payment Type</label>
-				<md-select ng-model="vm.selectedPaymentType" required>
-					<md-option ng-value="payment.id" ng-repeat="payment in vm.paymentType">{{payment.name}}</md-option>
-				</md-select>
-			</md-input-container>
-			<div layout="row" layout-align="start center">
-				<md-input-container flex>
-					<label>Select Project</label>
-					<md-select ng-model="vm.selectedProject" required>
-						<md-option ng-value="project.id" ng-repeat="project in vm.project">{{project.name}}</md-option>
+				<md-input-container>
+					<label>Select Payment Type</label>
+					<md-select ng-model="vm.selectedPaymentType" required>
+						<md-option ng-value="payment.id" ng-repeat="payment in vm.paymentType">{{payment.name}}</md-option>
 					</md-select>
 				</md-input-container>
-				<div flex="5"></div>
 				<div layout="row" layout-align="start center">
-					<div class="grid-tagline-bold">Payment Date</div>
-					<md-datepicker ng-model="vm.currDate" md-placeholder="Enter date"></md-datepicker>
+					<md-input-container flex>
+						<label>Select Project</label>
+						<md-select ng-model="vm.selectedProject" required>
+							<md-option ng-value="project.id" ng-repeat="project in vm.project">{{project.name}}</md-option>
+						</md-select>
+					</md-input-container>
+					<div flex="5"></div>
+					<div layout="row" layout-align="start center">
+						<div class="grid-tagline-bold">Payment Date</div>
+						<md-datepicker ng-model="vm.currDate" md-placeholder="Enter date"></md-datepicker>
+					</div>
+					<div flex="5"></div>
 				</div>
-				<div flex="5"></div>
-			</div>
-			<div layout="row">
-				<md-autocomplete required flex md-no-cache="true" md-selected-item="vm.selectedItem" md-input-name="autocompleteField" md-search-text="vm.searchText" md-items="item in vm.querySearchName(vm.searchText)" md-item-text="item.name" md-min-length="0" md-floating-label=" Type Empolyee Name">
-					<md-item-template>
-						<span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.name}} ({{item.code}})</span>
-					</md-item-template>
-					<md-not-found>
-						No Empolyee Name "{{vm.searchText}}" were found.
-					</md-not-found>
-				</md-autocomplete>
-				<div flex="5"></div>
-				<md-input-container>
-					<label>Amount</label>
-					<input name="amount" ng-model="vm.amount" required>
+				<div layout="row">
+					<md-autocomplete required flex md-no-cache="true" md-selected-item="vm.selectedItem" md-input-name="autocompleteField" md-search-text="vm.searchText" md-items="item in vm.querySearchName(vm.searchText)" md-item-text="item.name" md-min-length="0" md-floating-label=" Type Empolyee Name">
+						<md-item-template>
+							<span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.name}} ({{item.code}})</span>
+						</md-item-template>
+						<md-not-found>
+							No Empolyee Name "{{vm.searchText}}" were found.
+						</md-not-found>
+					</md-autocomplete>
+					<div flex="5"></div>
+					<md-input-container>
+						<label>Amount</label>
+						<input name="amount" ng-model="vm.amount" required>
+					</md-input-container>
+				</div>
+				<div layout="row">
+					<md-input-container flex>
+						<label>Payment Mode</label>
+						<input name="amount" ng-model="vm.paymentMode" required>
+					</md-input-container>
+					<div flex="5"></div>
+					<md-input-container flex>
+						<label>Instrument No. / Transaction No.</label>
+						<input name="amount" ng-model="vm.transaction_no" required>
+					</md-input-container>
+				</div>
+				<md-input-container class="md-block">
+					<label>Note</label>
+					<textarea ng-model="vm.note" md-maxlength="150" rows="5" md-select-on-focus></textarea>
 				</md-input-container>
 			</div>
-			<div layout="row">
-				<md-input-container flex>
-					<label>Payment Mode</label>
-					<input name="amount" ng-model="vm.paymentMode" required>
-				</md-input-container>
-				<div flex="5"></div>
-				<md-input-container flex>
-					<label>Instrument No. / Transaction No.</label>
-					<input name="amount" ng-model="vm.transaction_no" required>
-				</md-input-container>
-			</div>
-			<md-input-container class="md-block">
-				<label>Note</label>
-				<textarea ng-model="vm.note" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-			</md-input-container>
-		</div>
 		</md-content>
 		<div layout="row" layout-align="start center">
-		<div flex></div>
-		<md-button class="md-accent" ng-click="vm.onCancelBtn()">
-			Cancel
-		</md-button>
-		<md-button class="md-accent md-raised" ng-click="vm.onSaveBtn()">
-			SAVE
-		</md-button>
-	</div>
+			<p style="margin: 0px 16px 0 8px;">{{vm.block_state}} this Employee ?</p>
+			<md-switch class="no-mar" ng-model="vm.isBlock" ng-change="vm.onBlockEmployee(vm.isBlock)">
+			</md-switch>
+			<div flex></div>
+			<md-button class="md-accent" ng-click="vm.onCancelBtn()">
+				Cancel
+			</md-button>
+			<md-button class="md-accent md-raised" ng-click="vm.onSaveBtn()">
+				SAVE
+			</md-button>
+		</div>
 	</md-card>
 </div>
 <!-- Instruction -->
-<div md-whiteframe="5" class="instruction-container" ng-class="vm.instructionFlag ? 'instruction-container-close': 'instruction-container-open'">
-	<div layout="column" class="p8">
+<div md-whiteframe="5" class="instruction-container" ng-class="vm.instructionFlag ? 'r0': 'r450'">
+	<div layout="column" class="has-pad">
 		<div layout="row" layout-align="start center">
 			<md-button class="md-icon-button" ng-click="vm.onClose()">
-				<i class="material-icons md-concrete">close</i>
+				<i class="material-icons">close</i>
 			</md-button>
 			<div flex></div>
 		</div>
 		<div layout="column" class="grid" flex="40">
-			<div layout="row" layout-align="start center" class="m8">
+			<div layout="row" layout-align="start center" class="has-mar">
 				<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom="true" class="instructions no-pad" flex>
 					<md-tab label="સૂચનો">
-						<md-content class="md-padding">
-							<ol class="guj-steps-link">
+						<md-content>
+							<ol class="steps-link">
 								<li>
 									<p>નવા ફેકલ્ટી રજીસ્ટર કરવા માટે <strong>CREATE</strong> પર ક્લિક કરો.</p>
 								</li>
 								<li>
-									<p>પસંદ કરેલ ફેકલ્ટીનો રેકોર્ડ સંપાદિત કરવા માટે <i class="material-icons md-concrete">edit</i> પર ક્લિક કરો.</p>
-								</li>
-								<li>
-									<p>Click on <i class="material-icons md-concrete">delete</i> to delete record of selected faculty.</p>
+									<p>પસંદ કરેલ ફેકલ્ટીનો રેકોર્ડ સંપાદિત કરવા માટે <i class="material-icons">edit</i> પર ક્લિક કરો.</p>
 								</li>
 							</ol>
 						</md-content>
 					</md-tab>
 					<md-tab label="Instructions">
-						<md-content class="md-padding">
+						<md-content>
 							<ol class="steps-link">
 								<li>
 									<p>Click on <strong>CREATE</strong> button to register new faculty.</p>
 								</li>
 								<li>
-									<p>Click on <i class="material-icons md-concrete">edit</i> to edit record of selected faculty.</p>
-								</li>
-								<li>
-									<p>Click on <i class="material-icons md-concrete">delete</i> to delete record of selected faculty.</p>
+									<p>Click on <i class="material-icons">edit</i> to edit record of selected faculty.</p>
 								</li>
 							</ol>
 						</md-content>

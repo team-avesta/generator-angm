@@ -12,9 +12,14 @@
 
     angular.module('<%= nameApp %>', [
         'vendor',
-        'layouts',
         'shared',
-        'dashboard', <% _.each(arrayModules, function(module) { %>
+        'dashboard',
+        'layouts',
+        'notification',
+        'login',
+        'otp',
+        'forgotPassword',
+        'registration', <% _.each(arrayModules, function(module) { %>
         '<%= module.name %>', <% }); %>
     ]);
 

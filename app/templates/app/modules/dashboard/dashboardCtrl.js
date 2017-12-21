@@ -5,9 +5,9 @@
 		.module('dashboard')
 		.controller('DashboardCtrl', controller);
 
-	controller.$inject = ['dashboardService'];
+	controller.$inject = ['dashboardService', 'stateConstantService', '$state'];
 
-	function controller(dashboardService) {
+	function controller(dashboardService, stateConstantService, $state) {
 		var vm = this;
 		vm.title = "Hello, dashboard!";
 		vm.version = "1.0.0";

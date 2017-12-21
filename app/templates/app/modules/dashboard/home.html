@@ -1,9 +1,36 @@
-<div layout-fill layout="column">
-   <md-card flex layout="row">
-   	<div layout="column" flex>
-       <md-card-content>
-           <h2 class="md-title">Content from: Home page</h2>
-       </md-card-content>
-       </div>
-   </md-card>
+<div layout-fill layout="column" class="grid">
+	<md-card flex>
+		<div layout="row" class="h48" layout-align="start center">
+			<div layout-padding flex class="grid-title">Home</div>
+		</div>
+		<md-content flex layout="row">
+			<div layout="column" flex="65" md-whiteframe="1" class="has-mar">
+				<div layout="row" layout-align="start center" flex>
+					<md-tabs md-dynamic-height md-stretch-tabs="always" md-border-bottom="true" class="no-pad" flex>
+						<md-tab label="Instructions">
+							<md-content>
+								<ol class="steps-link">
+									<li>
+										<p>It will be <a class="link-connect" ng-click="vm.marksStatus($event)">published</a> soon.</p>
+									</li>
+								</ol>
+							</md-content>
+						</md-tab>
+						<md-tab label="સૂચનાઓ">
+							<md-content>
+								<ol class="steps-link">
+									<li>
+										<p>તે ટૂંક સમયમાં <a class="link-connect" ng-click="vm.marksStatus($event)">પ્રકાશિત</a> થશે.</p>
+									</li>
+								</ol>
+							</md-content>
+						</md-tab>
+					</md-tabs>
+				</div>
+			</div>
+			<div layout="column" flex="35" md-whiteframe="1" class="has-mar overflow-h">
+				<div ng-include="'app/modules/notification/notification.html'"></div>
+			</div>
+		</md-content>
+	</md-card>
 </div>

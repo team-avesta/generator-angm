@@ -25,7 +25,12 @@
         'vendor',
         'shared',
         'dashboard',
-        'layouts'
+        'layouts',
+        'notification',
+        'login',
+        'otp',
+        'forgotPassword',
+        'registration'
     ]);
 
 })();

@@ -188,6 +188,11 @@ var AngmGenerator = generators.Base.extend({
         }
         mkdirp('app/modules/vendor');
         mkdirp('app/modules/layouts');
+        mkdirp('app/modules/forgotPassword');
+        mkdirp('app/modules/login');
+        mkdirp('app/modules/notification');
+        mkdirp('app/modules/otp');
+        mkdirp('app/modules/registration');
 
         //Copy home folder content
         this.copy('app/app.js');
@@ -224,9 +229,7 @@ var AngmGenerator = generators.Base.extend({
             this.copy('app/modules/dashboard/sidenav/sidenav.html');
             this.copy('app/modules/dashboard/sidenav/sidenavCtrl.js');
             this.copy('app/modules/dashboard/sidenav/sidenavService.js');
-
         } else {
-
             this.copy('app/modules/layouts/nav-bar/navbar.html');
             this.copy('app/modules/layouts/nav-bar/navbar-tpl.html');
             this.copy('app/modules/layouts/nav-bar/navBarCtrl.js');
@@ -234,7 +237,49 @@ var AngmGenerator = generators.Base.extend({
             this.copy('app/modules/layouts/nav-bar/navbarService.js');
         }
 
+        //forgotPassword
+
+        this.copy('app/modules/forgotPassword/forgotPassword.html');
+        this.copy('app/modules/forgotPassword/forgotPasswordCtrl.js');
+        this.copy('app/modules/forgotPassword/forgotPasswordRoute.js');
+        this.copy('app/modules/forgotPassword/forgotPasswordService.js');
+        this.copy('app/modules/forgotPassword/forgotPassword.module.js');
+
+         //login
+
+        this.copy('app/modules/login/login.html');
+        this.copy('app/modules/login/loginCtrl.js');
+        this.copy('app/modules/login/loginRoute.js');
+        this.copy('app/modules/login/loginService.js');
+        this.copy('app/modules/login/login.module.js');
+
+         //notification
+
+        this.copy('app/modules/notification/notification.html');
+        this.copy('app/modules/notification/notificationCtrl.js');
+        this.copy('app/modules/notification/notificationRoute.js');
+        this.copy('app/modules/notification/notificationService.js');
+        this.copy('app/modules/notification/notification.module.js');
+
+        //otp
+
+        this.copy('app/modules/otp/otp.html');
+        this.copy('app/modules/otp/otpForm.html');
+        this.copy('app/modules/otp/otpCtrl.js');
+        this.copy('app/modules/otp/otpRoute.js');
+        this.copy('app/modules/otp/otpService.js');
+        this.copy('app/modules/otp/otp.module.js');
+
+        //registration
+
+        this.copy('app/modules/registration/registration.html');
+        this.copy('app/modules/registration/registrationCtrl.js');
+        this.copy('app/modules/registration/registrationRoute.js');
+        this.copy('app/modules/registration/registrationService.js');
+        this.copy('app/modules/registration/registration.module.js');
+
         // Copy shared modules file
+
         // services
         this.copy('app/modules/shared/shared.module.js');
         this.copy('app/modules/shared/services/baseDataService.js');
@@ -277,21 +322,18 @@ var AngmGenerator = generators.Base.extend({
         this.copy('app/modules/layouts/layouts.module.js');
         this.copy('app/modules/layouts/layoutsRoute.js');
         this.copy('app/modules/layouts/2columnInvite.html');
+        this.copy('app/modules/layouts/2columnInviteCtrl.js');
         this.copy('app/modules/layouts/dialog.html');
         this.copy('app/modules/layouts/dialogCtrl.js');
         this.copy('app/modules/layouts/dialogForm.html');
         this.copy('app/modules/layouts/dialogFormCtrl.js');
+        this.copy('app/modules/layouts/form.html');
+        this.copy('app/modules/layouts/formCtrl.js');
         this.copy('app/modules/layouts/grid.html');
         this.copy('app/modules/layouts/gridCtrl.js');
-        this.copy('app/modules/layouts/form.html');
-        this.copy('app/modules/layouts/tab.html');
-        this.copy('app/modules/layouts/formCtrl.js');
-        this.copy('app/modules/layouts/login.html');
-        this.copy('app/modules/layouts/otp.html');
-        this.copy('app/modules/layouts/registration.html');
         this.copy('app/modules/layouts/reportTable.html');
-
-
+        this.copy('app/modules/layouts/reportTableCtrl.js');
+        this.copy('app/modules/layouts/underconstruction.html');
 
         //copy gitignore files
         this.copy('.gitignore');
@@ -321,12 +363,13 @@ var AngmGenerator = generators.Base.extend({
         this.copy('styles/sass/instruction.scss', 'assets/sass/instruction.scss');
         this.copy('styles/sass/loading-spinner.scss', 'assets/sass/loading-spinner.scss');
         this.copy('styles/sass/login.scss', 'assets/sass/login.scss');
+        this.copy('styles/sass/notification.scss', 'assets/sass/notification.scss');
         this.copy('styles/sass/overwrite.scss', 'assets/sass/overwrite.scss');
+        this.copy('styles/sass/report-table.scss', 'assets/sass/report-table.scss');
         this.copy('styles/sass/sidebar.scss', 'assets/sass/sidebar.scss');
+        this.copy('styles/sass/toast.scss', 'assets/sass/toast.scss');
         this.copy('styles/sass/typography.scss', 'assets/sass/typography.scss');
         this.copy('styles/sass/variable.scss', 'assets/sass/variable.scss');
-        this.copy('styles/sass/report-table.scss', 'assets/sass/report-table.scss');
-        this.copy('styles/sass/toast.scss', 'assets/sass/toast.scss');
 
         // Copy project files
         //this.copy('Gruntfile.js');

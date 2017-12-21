@@ -9,10 +9,8 @@
 
 	function controller() {
 		var vm = this;
-		vm.block_state = 'Block';
-		vm.isBlock = false;
-		vm.onBlockFaculty = onBlockFaculty;
-
+		vm.isFilterOpen = false;
+		vm.filterButtonText = '';
 		vm.filterButtonText;
 		vm.onFilterBtn = onFilterBtn;
 		////////////
@@ -32,16 +30,8 @@
 		}
 
 		function onFilterBtn() {
-			vm.is_filter_open = !vm.is_filter_open;
-			vm.filterButtonText = vm.is_filter_open ? 'CLOSE FILTER' : 'VIEW FILTER';
-		}
-
-		function onBlockFaculty(block) {
-			if (block) {
-				vm.block_state = 'Unblock';
-			} else {
-				vm.block_state = 'Block';
-			}
+			vm.isFilterOpen = !vm.isFilterOpen;
+			vm.filterButtonText = vm.isFilterOpen ? 'CLOSE FILTER' : 'VIEW FILTER';
 		}
 	}
 

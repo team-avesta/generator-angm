@@ -25,33 +25,39 @@
 				sub_menu: [{
 						id: 21,
 						name: '2 column',
-						icon: 'add_to_queue',
+						icon: 'art_track',
 						sref: stateConstantService.TWO_COLUMN
 					},
 					{
 						id: 22,
 						name: 'Dialog',
-						icon: 'location_city',
+						icon: 'aspect_ratio',
 						sref: stateConstantService.DIALOG
 					},
 					{
 						id: 23,
 						name: 'Grid',
-						icon: 'person',
+						icon: 'view_headline',
 						sref: stateConstantService.GRID
 					},
 					{
 						id: 24,
 						name: 'Form',
-						icon: 'group_add',
+						icon: 'assignment',
 						sref: stateConstantService.FORM
 					},
 					{
 						id: 25,
-						name: 'Tab',
-						icon: 'chrome_reader_mode',
-						sref: stateConstantService.TAB
+						name: 'Report Table',
+						icon: 'view_week',
+						sref: stateConstantService.REPORT_TABLE
 					},
+					{
+						id: 26,
+						name: 'Under Construction',
+						icon: 'do_not_disturb',
+						sref: stateConstantService.UNDER_CONSTRUCTION
+					}
 				]
 			}
 

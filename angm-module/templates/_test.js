@@ -1,24 +1,24 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    describe('<%= slugifiedName %> test', function() {
-        var controller = null,
-            $scope = null;
+	describe('<%= slugifiedName %> test', function() {
+		var controller = null;
+		var $scope = null;
 
-        beforeEach(function() {
-            module('<%= nameApp %>');
-        });
+		beforeEach(function() {
+			module('<%= nameApp %>');
+		});
 
-        beforeEach(inject(function($controller, $rootScope) {
-            $scope = $rootScope.$new();
-            controller = $controller('<%= slugifiedNameCapitalize %>Ctrl', {
-                $scope: $scope
-            });
-        }));
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			controller = $controller('<%= slugifiedNameCapitalize %>Ctrl', {
+				$scope: $scope
+			});
+		}));
 
-        it('canary test', function() {
-            expect(true).to.be.eql(true);
-        });
+		it('canary test', function() {
+			expect(true).to.be.eql(true);
+		});
 
-    });
+	});
 })();

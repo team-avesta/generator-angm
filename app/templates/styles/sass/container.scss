@@ -6,6 +6,25 @@
 	background-color: $appbg;
 }
 
+.steps-link {
+	li {
+		p {
+			a {
+				color: $accent;
+				font-family: $medium-font;
+				text-decoration: none;
+			}
+			.link-connect {
+				cursor: pointer;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+
 
 /* .app-title {
     font-family: robotobold;

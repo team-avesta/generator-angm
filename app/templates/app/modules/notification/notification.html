@@ -1,0 +1,16 @@
+<div layout="column" class="grid" ng-controller="notificationCtrl as vm">
+	<div layout="row" layout-align="first center" class="h35">
+		<div layout-padding flex class="grid-subtitle">Notification</div>
+	</div>
+	<md-divider></md-divider>
+	<div layout="column" class="overflow-a notication-container">
+		<md-list class="no-pad">
+			<md-list-item layout-padding class="notify-block notifybg" ng-repeat="notify in vm.notification" ng-class="{'priority-high-bg': notify.priority_type == 1}">
+				<div>
+					<div class="message-text no-mar">{{notify.statement}}</div>
+					<span class="time-text no-mar">{{notify.publish_at}}</span>
+				</div>
+			</md-list-item>
+		</md-list>
+	</div>
+</div>

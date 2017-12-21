@@ -3,16 +3,18 @@
 .grid {
   .grid-title {
     font-size: 19px;
-  }
-  .font-600 {
     font-family: $bold-font;
   }
-  .grid-tagline {
-    font-size: 14px;
-    padding: 0 8px;
-    color: $dull;
+  .grid-subtitle {
+    font-size: 16px;
     font-family: $medium-font;
   }
+  .grid-minititle {
+    font-size: 14px;
+  }
+  /* .font-600 {
+    font-family: $bold-font;
+  } */
 }
 
 

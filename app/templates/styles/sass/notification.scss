@@ -1,0 +1,46 @@
+@import "variable";
+
+.notify-block {
+    border-top: 1px solid $offwhite;
+    &:last-child {
+        border-bottom: 1px solid $offwhite;
+    }
+}
+
+.notication-container {
+	.naming-logo {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: $avesta;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $peace;
+		font-size: 12px;
+		font-family: $medium-font;
+	}
+	.message-text {
+		font-size: 13px;
+		font-family: $medium-font;
+		color: $smokyblack;
+		width: 100%;
+	}
+	.time-text {
+		font-size: 11px;
+		font-family: $medium-font;
+		color: $fossil;
+	}
+	.notifybg {
+		&:hover {
+			background-color: $notify-bg;
+		}
+	}
+}
+
+.priority-high-bg {
+	background-color: $notify-highbg !important;
+	&:hover {
+		background-color: $notify-bg !important;
+	}
+}

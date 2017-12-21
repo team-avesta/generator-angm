@@ -11,7 +11,9 @@
 		$stateProvider
 			.state(stateConstantService.TWO_COLUMN, {
 				url: '/twoColumn',
-				templateUrl: 'app/modules/layouts/2columnInvite.html'
+				templateUrl: 'app/modules/layouts/2columnInvite.html',
+				controller: '2columnInviteCtrl',
+				controllerAs: 'vm'
 			})
 			.state(stateConstantService.DIALOG, {
 				url: '/dialog',
@@ -31,9 +33,15 @@
 				controller: 'formCtrl',
 				controllerAs: 'vm'
 			})
-			.state(stateConstantService.TAB, {
-				url: '/tab',
-				templateUrl: 'app/modules/layouts/tab.html'
+			.state(stateConstantService.REPORT_TABLE, {
+				url: '/report_table',
+				templateUrl: 'app/modules/layouts/reportTable.html',
+				controller: 'reportTableCtrl',
+				controllerAs: 'vm'
+			})
+			.state(stateConstantService.UNDER_CONSTRUCTION, {
+				url: '/under_construction',
+				templateUrl: 'app/modules/layouts/underconstruction.html',
 			});
 	}
 })();

@@ -6,12 +6,12 @@
 }
 
 .report-table-header {
-	border: solid 1px lightgray;
+	border: solid 1px $fog;
 	min-height: 37px;
 	.report-table-header-td {
-		border-right: solid 1px lightgray;
+		border-right: solid 1px $fog;
 		text-align: center;
-		font-family: robotomedium;
+		font-family: $medium-font;
 		justify-content: center;
 		align-items: center;
 		display: flex;
@@ -26,7 +26,7 @@
 		}
 	}
 	.report-table-td {
-		border-right: solid 1px lightgray;
+		border-right: solid 1px $fog;
 		font-size: 14px;
 		text-align: center;
 		min-height: 100%;

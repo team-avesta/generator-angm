@@ -1,7 +1,64 @@
-<div layout-fill layout="column">
-   <md-card flex layout="row" layout-align="center center">
-       <md-card-content>
-           <p>This module is under construction.</p>
-       </md-card-content>
-   </md-card>
+<div layout-fill layout="column" class="grid">
+	<md-card flex>
+		<div layout="row" class="h48" layout-align="start center">
+			<div layout-padding flex class="grid-title">Two Column Layout</div>
+			<md-button class="md-accent" ng-click="vm.onFilterBtn()">{{vm.filterButtonText}}</md-button>
+		</div>
+		<div flex layout="row">
+			<md-content flex="45" class="has-pad" layout="column">
+				<md-input-container>
+					<label>Select Payment Type</label>
+					<md-select ng-model="vm.selectedPaymentType" required>
+						<md-option ng-value="payment.id" ng-repeat="payment in vm.paymentType">{{payment.name}}</md-option>
+					</md-select>
+				</md-input-container>
+				<md-input-container>
+					<label>Payment Mode</label>
+					<input name="amount" ng-model="vm.paymentMode" required>
+				</md-input-container>
+				<md-input-container>
+					<label>Instrument No. / Transaction No.</label>
+					<input name="amount" ng-model="vm.transaction_no" required>
+				</md-input-container>
+				<div layout="row" layout-align="center center">
+					<md-button class="md-accent" ng-click="vm.onCancelBtn()">
+						Cancel
+					</md-button>
+					<md-button class="md-accent md-raised" ng-click="vm.onSaveBtn()">
+						SAVE
+					</md-button>
+				</div>
+			</md-content>
+			<div flex></div>
+			<md-content flex="45" md-whiteframe="2" class="has-dbl-mar">
+				<md-data-table-container>
+					<table md-table md-data-table md-progress="deferred">
+						<thead md-head>
+							<tr md-row>
+								<th md-column unit="" width="10%">Sr No.</th>
+								<th md-column unit="" class="text-center" width="20%">Code</th>
+								<th md-column unit="" width="60%">Expenses</th>
+								<th md-column unit="" width="10%"></th>
+							</tr>
+						</thead>
+						<tbody md-body>
+							<tr md-row md-auto-select ng-repeat="items in vm.itemList">
+								<td md-cell flex>{{$index + 1}}</td>
+								<td md-cell flex class="text-center">{{items.code}}</td>
+								<td md-cell flex><strong>{{items.name}}</strong></td>
+								<td md-cell class="text-right" layout="row">
+									<md-button class="md-icon-button" flex>
+										<i class="material-icons asbestos">edit</i>
+									</md-button>
+									<md-button class="md-icon-button" flex>
+										<i class="material-icons asbestos">delete</i>
+									</md-button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</md-data-table-container>
+			</md-content>
+		</div>
+	</md-card>
 </div>

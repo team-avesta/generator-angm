@@ -12,7 +12,7 @@
 		vm.block_state = 'Block';
 		vm.isBlock = false;
 		vm.instructionFlag = false;
-		vm.onBlockFaculty = onBlockFaculty;
+		vm.onBlockEmployee = onBlockEmployee;
 		vm.onInstruction = onInstruction;
 		vm.onClose = onClose;
 		vm.currDate = new Date();
@@ -30,7 +30,7 @@
 			vm.instructionFlag = false;
 		}
 
-		function onBlockFaculty(block) {
+		function onBlockEmployee(block) {
 			if (block) {
 				vm.block_state = 'Unblock';
 			} else {

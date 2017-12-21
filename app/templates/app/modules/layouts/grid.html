@@ -1,15 +1,52 @@
 <div layout-fill layout="column" class="grid">
 	<md-card flex>
 		<div layout="row" class="h48" layout-align="start center">
-			<div layout-padding flex class="grid-title font-600">Grid</div>
+			<div layout-padding flex class="grid-title">Grid</div>
 			<md-button class="md-accent" ng-click="vm.onFilterBtn()">{{vm.filterButtonText}}</md-button>
+		</div>
+		<!-- filter -->
+		<div layout="column" md-whiteframe="1" class="has-pad pos-rel z1" ng-show="vm.isFilterOpen">
+			<div layout="row" flex layout-align="start center">
+				<md-input-container flex="30">
+					<label>Select College Zone</label>
+					<md-select name="college_zone_id" ng-model="vm.filterParams.college_zone_id">
+						<md-option ng-repeat="zone in vm.collegeZoneData" ng-value="zone.id">{{ zone.name }} </md-option>
+					</md-select>
+				</md-input-container>
+				<div flex></div>
+				<md-autocomplete flex="30" md-clear-button="true" md-no-cache="true" md-search-text-change="vm.onChangeCollege(vm.codeSearchText, 'code')" ng-disabled="vm.filterParams.name" md-min-length="2" md-input-name="autocompleteField" md-search-text="vm.codeSearchText" md-items="item in vm.getCollegeBySearchText(vm.codeSearchText, 'code')" md-selected-item-change="vm.onSelectCollege(item, 'code')" md-item-text="item.code" md-floating-label="College Code">
+					<md-item-template>
+						<span md-highlight-text="vm.codeSearchText">{{ item.code }} - {{ item.name }}</span>
+					</md-item-template>
+					<md-not-found>
+						No college code matching "{{vm.codeSearchText}}" were found.
+					</md-not-found>
+				</md-autocomplete>
+				<div flex></div>
+				<md-autocomplete flex="30" md-clear-button="true" md-no-cache="true" md-search-text-change="vm.onChangeCollege(vm.nameSearchText, 'name')" ng-disabled="vm.filterParams.code" md-min-length="2" md-input-name="autocompleteCollegeName" md-search-text="vm.nameSearchText" md-items="item in vm.getCollegeBySearchText(vm.nameSearchText, 'name')" md-selected-item-change="vm.onSelectCollege(item, 'name')" md-item-text="item.name" md-floating-label="College Name">
+					<md-item-template>
+						<span md-highlight-text="vm.nameSearchText">{{ item.name }} - {{ item.code }}</span>
+					</md-item-template>
+					<md-not-found>
+						No college name matching "{{vm.nameSearchText}}" were found.
+					</md-not-found>
+				</md-autocomplete>
+			</div>
+			<div layout="row" layout-align="end center">
+				<md-button md-no-ink class="md-accent" ng-click="vm.onReset()">
+					RESET
+				</md-button>
+				<md-button ng-click="vm.onSearchCollege()" md-no-ink class="md-accent md-raised">
+					SEARCH
+				</md-button>
+			</div>
 		</div>
 		<md-content flex>
 			<md-data-table-container>
 				<table md-table md-data-table md-progress="deferred">
 					<thead md-head>
 						<tr md-row>
-							<th md-column unit=""  width="10%">Sr No.</th>
+							<th md-column unit="" width="10%">Sr No.</th>
 							<th md-column unit="" class="text-center" width="20%">Code</th>
 							<th md-column unit="" width="60%">Expenses</th>
 							<th md-column unit="" width="10%"></th>

@@ -1,9 +1,13 @@
 @import 'variable';
 
-md-toast.md-success-toast-theme {
-    background-color: $toast-success;
+.md-failure-toast-theme {
+	.md-toast-content {
+		background-color: $toast-failure !important;
+	}
 }
 
-md-toast.md-failure-toast-theme {
-    background-color: $toast-failure;
+.md-success-toast-theme {
+	.md-toast-content {
+		background-color: $toast-success !important;
+	}
 }

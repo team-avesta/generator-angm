@@ -15,6 +15,7 @@
  	text-transform: capitalize;
  	font-size: 14px;
  	font-family: $medium-font;
+ 	line-height: 16px;
  }
 
  .menu-selected {
@@ -31,7 +32,6 @@
  	}
  	.menu-text {
  		color: $accent !important;
- 		font-family: $bold-font;
  	}
  	i {
  		color: $accent !important;

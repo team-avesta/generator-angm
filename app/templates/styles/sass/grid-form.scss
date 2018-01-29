@@ -34,7 +34,7 @@ div.upload {
     color: $smokyblack;
     border: none;
     overflow: hidden;
-    shadow: none;
+    box-shadow: none;
     &:focus {
       outline: none;
     }

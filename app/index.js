@@ -282,6 +282,8 @@ var AngmGenerator = generators.Base.extend({
 
         // services
         this.copy('app/modules/shared/shared.module.js');
+        this.copy('app/modules/shared/services/arrayService.js');
+        this.copy('app/modules/shared/services/authService.js');
         this.copy('app/modules/shared/services/baseDataService.js');
         this.copy('app/modules/shared/services/dialogService.js');
         this.copy('app/modules/shared/services/errorService.js');

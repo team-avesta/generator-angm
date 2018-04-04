@@ -31,7 +31,8 @@
     "team-avesta-angular-validation": "~3.0.2",
     "angular-validation-schema": "*",
     "angular-material-data-table": "^0.10.10",
-    "md-steppers": "^0.3.4"
+    "md-steppers": "^0.3.4",
+    "ngstorage": "^0.3.11"
   },
   "resolutions": {
     "angular": ">=1.3.*"

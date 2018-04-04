@@ -7,59 +7,110 @@
  * Example usage: Include following where routes are defined:
  * $stateProvider
  *
-        .state('home', {
-            url: '/home',
-            templateUrl: '/home.html',
-            requiresAuthentication: true,
-            policies: ['programmes.all', 'programmes.read']
-        })
+		.state('home', {
+			url: '/home',
+			templateUrl: '/home.html',
+			requiresAuthentication: true,
+			policies: ['programmes.all', 'programmes.read']
+		})
 
-    Here ['programmes.all', 'programmes.read'] are required policies to access the state home. If
-    user has any one of the above policy, he/she can access the state home.
+	Here ['programmes.all', 'programmes.read'] are required policies to access the state home. If
+	user has any one of the above policy, he/she can access the state home.
  */
 (function() {
-    'use strict';
-    angular.module('shared')
-        .factory('authService', service);
+	'use strict';
+	angular.module('shared')
+		.factory('authService', service);
 
-    function service() {
-        var auth = {};
+	function service(Restangular, $q, $localStorage, dialogService, $window) {
+		var logoutAPI = Restangular.all('authentication/logout');
+		var loginAPI = Restangular.all('authentication/login');
+		var user = {};
+		var userPolicies = [];
 
-        auth.checkPoliciesForView = function(view) {
-            if (!view.requiresAuthentication) {
-                return true;
-            }
+		var service = {
+			user: user,
+			getAuthToken: getAuthToken,
+			setAuthToken: setAuthToken,
+			removeAuthToken: removeAuthToken,
+			logout: logout,
+			redirectToLogin: redirectToLogin,
+			getLoginURL: getLoginURL,
+			getUser: getUser,
+			setUser: setUser,
+			loadUserFromToken: loadUserFromToken
+		};
 
-            return userHasPoliciesForView(view);
-        };
+		return service;
 
-        var userHasPoliciesForView = function(view) {
-            if (!view.policies || !view.policies.length) {
-                return true;
-            }
+		function removeAuthToken(x_auth_token) {
+			delete $localStorage.x_auth_token;
+		}
 
-            return auth.userHasPolicy(view.policies);
-        };
+		function getAuthToken() {
+			if ($localStorage.x_auth_token) {
+				return JSON.parse($localStorage.x_auth_token);
+			} else {
+				return null;
+			}
+		}
 
-        auth.userHasPolicy = function(policies) {
-            var found = false;
-            var data = {
-                user_policies: ['programmes.all', 'programmes.read']
-            };
+		function setAuthToken(x_auth_token) {
+			service.removeAuthToken(x_auth_token);
+			$localStorage.x_auth_token = angular.toJson(x_auth_token);
+		}
 
-            // replace above with API call to /auth/policies
+		function logout() {
+			return $q(function(resolve, reject) {
+				logoutAPI.post().then(function(res) {
+					service.removeAuthToken($localStorage.x_auth_token);
+					resolve(res);
+				}, function(err) {
+					reject();
+				});
+			});
+		}
 
-            angular.forEach(policies, function(policy, index) {
-                if (data.user_policies.indexOf(policy) >= 0) {
-                    found = true;
-                    return;
-                }
-            });
+		function getLoginURL() {
+			return $q(function(resolve, reject) {
+				loginAPI.customGET('loginURL').then(function(res) {
+					resolve(res);
+				}, function(err) {
+					reject();
+				});
+			});
+		}
 
-            return found;
-        };
+		function redirectToLogin() {
+			if (service.unauthorized) {
+				return;
+			}
+			service.unauthorized = true;
+			dialogService.showPopupDialogWithPromise('Unauthorized', 'Your session has been expired. Please login to continue.').then(function() {
+				service.getLoginURL().then(function(res) {
+					return $window.location = res.redirect_url;
+				});
+			});
+		}
 
-        return auth;
+		function getUser() {
+			return angular.copy(service.user);
+		}
 
-    }
+		function setUser(val) {
+			service.user = val;
+		}
+
+		function loadUserFromToken() {
+			//var x_auth_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA0LCJyb2xlX2lkcyI6WzFdLCJyb2xlX2NvZGVzIjpbIjAwMSJdLCJuYW1lIjoiTmFyZXNoIFRhbmsiLCJ1c2VyX2lkIjoiMDAxIiwiY2VudGVyX2lkIjpudWxsLCJpYXQiOjE1MTk2MjM0ODIsImV4cCI6MTUxOTcwOTg4Mn0.IBmjoB_Xc7YZOAEObICV9GyXkXVkJ2F8ogZgfVqEXJo'
+
+			var x_auth_token = service.getAuthToken();
+			if (x_auth_token) {
+				var base64Url = x_auth_token.split('.')[1];
+				var base64 = base64Url.replace('-', '+').replace('_', '/');
+				service.setUser(JSON.parse($window.atob(base64)));
+			}
+		}
+
+	}
 })();

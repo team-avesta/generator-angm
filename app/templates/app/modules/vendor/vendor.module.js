@@ -24,7 +24,8 @@
 		'validation', //this module comes from team-avesta-angular-validation bower package
 		'validation.schema',
 		'md.data.table',
-		'md-steppers'
+		'md-steppers',
+		'ngStorage'
 	]);
 
 })();

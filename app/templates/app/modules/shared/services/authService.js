@@ -30,9 +30,13 @@
 
 		var service = {
 			user: user,
+			userPolicies: userPolicies,
 			getAuthToken: getAuthToken,
 			setAuthToken: setAuthToken,
 			removeAuthToken: removeAuthToken,
+			checkPoliciesForView: checkPoliciesForView,
+			userHasPoliciesForView: userHasPoliciesForView,
+			userHasPolicy: userHasPolicy,
 			logout: logout,
 			redirectToLogin: redirectToLogin,
 			getLoginURL: getLoginURL,
@@ -53,6 +57,34 @@
 			} else {
 				return null;
 			}
+		}
+
+		function checkPoliciesForView(view) {
+			if (!view.requiresAuthentication) {
+				return true;
+			}
+
+			return service.userHasPoliciesForView(view);
+		}
+
+		function userHasPoliciesForView(view) {
+			if (!view.policies || !view.policies.length) {
+				return true;
+			}
+
+			return service.userHasPolicy(view.policies);
+		}
+
+		function userHasPolicy(policies) {
+			var found = false;
+
+			angular.forEach(policies, function(policy, index) {
+				if (service.userPolicies.policies.indexOf(policy) >= 0) {
+					found = true;
+				}
+			});
+
+			return found;
 		}
 
 		function setAuthToken(x_auth_token) {
